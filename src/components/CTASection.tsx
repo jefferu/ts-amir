@@ -8,13 +8,9 @@ interface CTASectionProps {
   onOpenBooking: () => void;
 }
 
-/**
- * High-converting CTA section modeled after Rippner Tennis's "Ready to Start".
- */
 export default function CTASection({ onOpenBooking }: CTASectionProps) {
   return (
     <section className="bg-slate-900 text-white py-20 md:py-28 relative overflow-hidden">
-      {/* Decorative tennis court ring */}
       <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
         <div className="w-[800px] h-[800px] rounded-full border-8 border-white"></div>
       </div>
@@ -36,7 +32,6 @@ export default function CTASection({ onOpenBooking }: CTASectionProps) {
           oder starte deine Turnierkarriere.
         </p>
 
-        {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <button
             onClick={onOpenBooking}
@@ -55,7 +50,6 @@ export default function CTASection({ onOpenBooking }: CTASectionProps) {
           </a>
         </div>
 
-        {/* 4 Trust Signals */}
         <div className="flex flex-wrap justify-center gap-6 sm:gap-10 text-xs font-bold text-slate-300">
           <span className="flex items-center gap-2">
             <CheckCircle2 size={16} className="text-lime-400" />

@@ -7,9 +7,6 @@ interface CampsSectionProps {
   onOpenBooking: (program?: string) => void;
 }
 
-/**
- * Feriencamps spotlight section (Ostern & Sommer).
- */
 export default function CampsSection({ onOpenBooking }: CampsSectionProps) {
   return (
     <section id="camps" className="bg-lime-400 py-20 md:py-24 text-slate-950 relative overflow-hidden">

@@ -11,16 +11,11 @@ interface FooterProps {
   onOpenBooking: () => void;
 }
 
-/**
- * Modern footer modeled after Rippner Tennis.
- * Includes complete German legal notices, partner certifications, and quick links.
- */
 export default function Footer({ onOpenLegal, onOpenBooking }: FooterProps) {
   return (
     <footer className="bg-slate-950 text-white pt-16 pb-12 border-t border-slate-900">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
-          {/* Brand Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
               <img
@@ -44,7 +39,6 @@ export default function Footer({ onOpenLegal, onOpenBooking }: FooterProps) {
               Amir Reza. Powered by Yonex.
             </p>
 
-            {/* Partner Badges */}
             <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold text-slate-300">
               <span className="px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-lime-400">
                 ★ GPTCA / ATP A-Level
@@ -58,7 +52,6 @@ export default function Footer({ onOpenLegal, onOpenBooking }: FooterProps) {
             </div>
           </div>
 
-          {/* Quick Links / Programs */}
           <div>
             <h4 className="text-xs font-bold tracking-widest text-white/50 uppercase mb-4">
               Programme
@@ -97,7 +90,6 @@ export default function Footer({ onOpenLegal, onOpenBooking }: FooterProps) {
             </ul>
           </div>
 
-          {/* Standorte */}
           <div>
             <h4 className="text-xs font-bold tracking-widest text-white/50 uppercase mb-4">
               Standorte
@@ -135,7 +127,6 @@ export default function Footer({ onOpenLegal, onOpenBooking }: FooterProps) {
             </div>
           </div>
 
-          {/* Direct Contact & Hours */}
           <div>
             <h4 className="text-xs font-bold tracking-widest text-white/50 uppercase mb-4">
               Direktkontakt
@@ -176,7 +167,6 @@ export default function Footer({ onOpenLegal, onOpenBooking }: FooterProps) {
           </div>
         </div>
 
-        {/* Bottom Legal & Copyright Bar */}
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
             <p>

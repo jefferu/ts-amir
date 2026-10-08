@@ -8,10 +8,6 @@ interface PricingSectionProps {
   onOpenBooking: (program?: string) => void;
 }
 
-/**
- * Modern Pricing section with interactive season switcher (Winter vs. Sommer vs. Privattraining)
- * Modeled after Rippner Tennis's transparent rates.
- */
 export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
   const [season, setSeason] = useState<"winter" | "summer" | "packages">("winter");
 
@@ -25,7 +21,6 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
   return (
     <section id="pricing" className="bg-slate-50 py-20 md:py-28 border-t border-slate-200">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
-        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="px-3 py-1 rounded-full bg-slate-900 text-lime-400 text-xs font-black tracking-widest uppercase inline-block mb-3">
             Faire & Transparente Konditionen
@@ -40,7 +35,6 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
           </p>
         </div>
 
-        {/* Interactive Season Switcher Tabs */}
         <div className="flex justify-center mb-14">
           <div className="inline-flex p-1.5 bg-white rounded-full border border-slate-200 shadow-sm">
             <button
@@ -76,7 +70,6 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
           </div>
         </div>
 
-        {/* Pricing Cards Grid */}
         <div
           className={`grid gap-6 ${
             currentCards.length === 2
@@ -107,7 +100,6 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
                   {card.period}
                 </p>
 
-                {/* Price Display */}
                 <div className="flex items-baseline gap-1 mb-6 pb-6 border-b border-slate-100">
                   <span className="text-4xl sm:text-5xl font-black text-slate-950">
                     {card.price === "0" ? "Kostenlos" : `${card.price} €`}
@@ -119,7 +111,6 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
                   )}
                 </div>
 
-                {/* Checklist */}
                 <div className="space-y-3 mb-8">
                   {card.features.map((f, i) => (
                     <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
@@ -130,7 +121,6 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
                 </div>
               </div>
 
-              {/* Action Button */}
               <div>
                 <button
                   onClick={() => onOpenBooking(card.title)}
@@ -148,7 +138,6 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
           ))}
         </div>
 
-        {/* Footnote Notice */}
         <div className="mt-12 max-w-2xl mx-auto p-4 rounded-2xl bg-white border border-slate-200 text-xs text-slate-600 flex items-start gap-3">
           <ShieldCheck size={20} className="text-lime-600 flex-shrink-0 mt-0.5" />
           <p>

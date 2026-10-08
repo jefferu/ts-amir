@@ -8,10 +8,6 @@ interface ProgramsSectionProps {
   onOpenBooking: (program?: string) => void;
 }
 
-/**
- * Interactive filterable Programs section modeled after Rippner Tennis.
- * Organizes youth academy, adult clinics, private coaching, and holiday camps.
- */
 export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps) {
   const [activeTab, setActiveTab] = useState<string>("all");
 
@@ -32,7 +28,6 @@ export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps)
   return (
     <section id="programs" className="bg-slate-50/60 py-20 md:py-28 border-t border-slate-200">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
-        {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-lime-100 text-lime-800 text-xs font-black tracking-widest uppercase mb-3">
             <Sparkles size={13} />
@@ -49,7 +44,6 @@ export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps)
           </p>
         </div>
 
-        {/* Category Filter Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
           {categories.map((cat) => (
             <button
@@ -66,7 +60,6 @@ export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps)
           ))}
         </div>
 
-        {/* Programs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPrograms.map((p) => (
             <div
@@ -74,7 +67,6 @@ export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps)
               className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                {/* Card Top: Age & Badge */}
                 <div className="flex items-center justify-between gap-2 mb-3">
                   <span className="px-2.5 py-1 rounded-lg bg-slate-100 text-[11px] font-bold text-slate-700">
                     {p.age}
@@ -86,7 +78,6 @@ export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps)
                   )}
                 </div>
 
-                {/* Title & Level */}
                 <h3 className="text-xl font-bold text-slate-900 mb-1 group-hover:text-lime-700 transition-colors">
                   {p.title}
                 </h3>
@@ -94,12 +85,10 @@ export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps)
                   {p.level}
                 </p>
 
-                {/* Description */}
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
                   {p.description}
                 </p>
 
-                {/* Features Checklist */}
                 <div className="space-y-2 mb-6 pt-4 border-t border-slate-100">
                   {p.features.map((feat, idx) => (
                     <div key={idx} className="flex items-start gap-2 text-xs text-slate-700">
@@ -110,7 +99,6 @@ export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps)
                 </div>
               </div>
 
-              {/* Card Bottom: Group Size & Action */}
               <div className="pt-4 border-t border-slate-100">
                 <div className="flex items-center justify-between text-xs text-slate-500 mb-4">
                   <span className="flex items-center gap-1 font-medium">

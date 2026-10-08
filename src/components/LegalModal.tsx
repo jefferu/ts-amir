@@ -10,9 +10,6 @@ interface LegalModalProps {
   type: "impressum" | "datenschutz";
 }
 
-/**
- * German legal compliance modal for Impressum and Datenschutz.
- */
 export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
   if (!isOpen) return null;
 

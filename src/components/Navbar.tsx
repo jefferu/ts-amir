@@ -21,10 +21,6 @@ interface NavbarProps {
   onOpenBooking: (program?: string) => void;
 }
 
-/**
- * Sticky responsive navigation modeled after Rippner Tennis.
- * Features hierarchical dropdowns, direct CTAs, and mobile drawer.
- */
 export default function Navbar({ onOpenBooking }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,7 +44,6 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         }`}
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between">
-          {/* Brand Logo with Official TS-Amir Crest */}
           <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group select-none py-0.5">
             <img
               src={getAssetUrl("/images/logo-amir.png")}
@@ -65,9 +60,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
-            {/* Über uns Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("about")}
@@ -116,7 +109,6 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               )}
             </div>
 
-            {/* Standorte Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("locations")}
@@ -155,7 +147,6 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               )}
             </div>
 
-            {/* Programme Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("programs")}
@@ -202,7 +193,6 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               )}
             </div>
 
-            {/* Direkte Links */}
             <a
               href="#camps"
               className="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-slate-950 rounded-lg hover:bg-slate-100 transition-colors"
@@ -225,7 +215,6 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             </a>
           </nav>
 
-          {/* Right Action Buttons */}
           <div className="hidden sm:flex items-center gap-3">
             <a
               href={`tel:${TENNIS_DATA.general.phone.replace(/[^0-9+]/g, "")}`}
@@ -245,7 +234,6 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             </button>
           </div>
 
-          {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 rounded-xl text-slate-800 hover:bg-slate-100 transition"
@@ -256,7 +244,6 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         </div>
       </header>
 
-      {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 top-[60px] z-30 bg-white/95 backdrop-blur-md lg:hidden p-6 overflow-y-auto flex flex-col justify-between border-t border-slate-200">
           <div className="space-y-4">

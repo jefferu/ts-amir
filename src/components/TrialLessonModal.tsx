@@ -11,10 +11,6 @@ interface TrialLessonModalProps {
   initialProgram?: string;
 }
 
-/**
- * Interactive trial lesson and booking modal.
- * Enables prospective players to book free trial sessions or camp inquiries.
- */
 export default function TrialLessonModal({
   isOpen,
   onClose,
@@ -36,7 +32,6 @@ export default function TrialLessonModal({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate real-time submission
     setSubmitted(true);
   };
 
@@ -51,7 +46,6 @@ export default function TrialLessonModal({
         className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Header */}
         <div className="bg-slate-900 text-white px-6 py-5 flex items-center justify-between border-b border-slate-800">
           <div className="flex items-center gap-3">
             <img
@@ -77,7 +71,6 @@ export default function TrialLessonModal({
           </button>
         </div>
 
-        {/* Content Body */}
         <div className="p-6 sm:p-8 overflow-y-auto flex-1">
           {submitted ? (
             <div className="text-center py-8">

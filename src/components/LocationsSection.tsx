@@ -8,15 +8,10 @@ interface LocationsSectionProps {
   onOpenBooking: (program?: string) => void;
 }
 
-/**
- * Locations section inspired by Rippner Tennis ("Where To Find Us").
- * Displays the primary tennis training hubs (SG Weiterstadt & TC Pfungstadt).
- */
 export default function LocationsSection({ onOpenBooking }: LocationsSectionProps) {
   return (
     <section id="locations" className="bg-white py-20 md:py-28">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
-        {/* Section Heading */}
         <div className="max-w-xl mb-14">
           <div className="inline-flex items-center gap-1.5 text-xs font-black tracking-widest text-slate-700 uppercase mb-3">
             <MapPin size={14} className="text-lime-600" />
@@ -33,7 +28,6 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
           </p>
         </div>
 
-        {/* Locations Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {TENNIS_DATA.locations.map((loc) => (
             <div
@@ -41,7 +35,6 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
               className="group bg-slate-50/70 rounded-3xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Visual Header */}
                 <div className="relative h-60 overflow-hidden bg-slate-900">
                   <img
                     src={
@@ -69,13 +62,11 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
                   </div>
                 </div>
 
-                {/* Body Details */}
                 <div className="p-6 sm:p-8 space-y-5">
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {loc.description}
                   </p>
 
-                  {/* Quick Facilities Chips */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700 pt-2 border-t border-slate-200">
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-lime-500"></span>
@@ -87,7 +78,6 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
                     </div>
                   </div>
 
-                  {/* Highlights Bullet List */}
                   <div className="space-y-2 pt-2 border-t border-slate-200">
                     <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 block">
                       Ausstattung & Vorteile:
@@ -95,7 +85,7 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-700">
                       {loc.highlights.map((h, i) => (
                         <div key={i} className="flex items-center gap-2">
-                          <Check size={14} className="text-lime-600 flex-shrink-0" />
+                          <Check size={14} className="text-lime-600 flex-shrink-0 mt-0.5" />
                           <span>{h}</span>
                         </div>
                       ))}
@@ -104,7 +94,6 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
                 </div>
               </div>
 
-              {/* Card Footer / Action */}
               <div className="p-6 sm:px-8 bg-slate-100/90 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-2 text-xs text-slate-600">
                   <Clock size={14} className="text-slate-500" />
@@ -123,7 +112,6 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
           ))}
         </div>
 
-        {/* Note under locations */}
         <div className="mt-12 text-center text-xs sm:text-sm text-slate-500 flex flex-wrap items-center justify-center gap-4">
           <span className="flex items-center gap-1.5">
             <Check size={16} className="text-lime-600" /> Keine feste Vereinsmitgliedschaft zum Schnuppern nötig

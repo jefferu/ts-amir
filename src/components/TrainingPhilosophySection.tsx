@@ -3,10 +3,6 @@
 import React from "react";
 import { Zap, HeartPulse, Brain, Target, Shield, CheckCircle } from "lucide-react";
 
-/**
- * Training Philosophy and modern stroke technique showcase.
- * Emphasizes Rafael Nadal topspin methodology, mental conditioning, and footwork.
- */
 export default function TrainingPhilosophySection() {
   const pillars = [
     {

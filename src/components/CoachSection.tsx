@@ -18,17 +18,11 @@ interface CoachSectionProps {
   onOpenBooking: () => void;
 }
 
-/**
- * High-authority Cheftrainer section showcasing Amir Reza's ATP credentials,
- * Davis Cup experience, and Rafa Nadal Academy scouting role.
- */
 export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
   return (
     <section id="coach" className="bg-white py-20 md:py-28 border-t border-slate-200">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
-        {/* Top Split: Coach Bio & Visual */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
-          {/* Visual Column */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-100 bg-gradient-to-b from-slate-800 to-slate-950 flex items-center justify-center pt-6">
               <img
@@ -38,7 +32,6 @@ export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none"></div>
 
-              {/* Floating Quote Card */}
               <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl">
                 <Quote size={20} className="text-lime-600 mb-1" />
                 <p className="text-xs text-slate-800 font-bold italic leading-snug">
@@ -51,7 +44,6 @@ export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
             </div>
           </div>
 
-          {/* Bio & Authority Details */}
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 text-lime-400 text-xs font-black tracking-widest uppercase mb-4">
               <Trophy size={13} />
@@ -85,7 +77,6 @@ export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
               </p>
             </div>
 
-            {/* Direct CTA */}
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={onOpenBooking}
@@ -105,7 +96,6 @@ export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
           </div>
         </div>
 
-        {/* Credentials Grid */}
         <div className="mb-20">
           <div className="text-center max-w-xl mx-auto mb-10">
             <h3 className="text-2xl font-black text-slate-950">
@@ -154,7 +144,6 @@ export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
           </div>
         </div>
 
-        {/* Student Achievements / Hall of Fame */}
         <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white relative overflow-hidden">
           <div className="relative z-10">
             <div className="max-w-xl mb-8">
