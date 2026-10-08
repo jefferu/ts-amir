@@ -15,7 +15,7 @@ interface HeroSectionProps {
  */
 export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100">
+    <section className="relative pt-28 pb-16 md:pt-36 lg:pt-40 md:pb-24 overflow-hidden bg-gradient-to-b from-white via-slate-50 to-slate-100">
       {/* Decorative tennis court lines watermark */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] select-none flex items-center justify-center">
         <div className="w-[1200px] h-[600px] border-4 border-slate-900 relative">
@@ -146,33 +146,33 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                 </div>
               </div>
 
-              {/* Floating Credential Card 1 (Top Right) */}
-              <div className="absolute -top-6 -right-6 hidden sm:flex items-center gap-3 p-3 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-slate-200/80 animate-fade-in">
+              {/* Floating Credential Card 1 (Top Right - positioned cleanly without header overlap) */}
+              <div className="absolute top-4 -right-2 sm:-right-4 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl bg-slate-950/95 text-white backdrop-blur-md shadow-2xl border border-slate-800 z-10 animate-fade-in">
                 <img
                   src={getAssetUrl("/images/official_atp_certified.png")}
                   alt="Official ATP Certified"
-                  className="h-10 w-auto object-contain"
+                  className="h-8 w-auto object-contain"
                 />
-                <div>
-                  <div className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">
+                <div className="pr-1">
+                  <div className="text-[10px] font-extrabold uppercase tracking-widest text-lime-400">
                     Höchste Lizenz
                   </div>
-                  <div className="text-xs font-black text-slate-900">
+                  <div className="text-xs font-black text-white whitespace-nowrap">
                     GPTCA A-Level Coach
                   </div>
                 </div>
               </div>
 
               {/* Floating Credential Card 2 (Bottom Left) */}
-              <div className="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-slate-200/80 animate-fade-in">
-                <div className="w-10 h-10 rounded-xl bg-lime-400 text-slate-950 flex items-center justify-center font-black text-sm">
+              <div className="absolute -bottom-4 -left-2 sm:-left-4 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-slate-200 z-10 animate-fade-in">
+                <div className="w-10 h-10 rounded-xl bg-lime-400 text-slate-950 flex items-center justify-center font-black text-sm shadow-sm">
                   RNA
                 </div>
-                <div>
+                <div className="pr-1">
                   <div className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">
                     Offizieller Partner
                   </div>
-                  <div className="text-xs font-black text-slate-900">
+                  <div className="text-xs font-black text-slate-900 whitespace-nowrap">
                     Rafa Nadal Academy Scout
                   </div>
                 </div>
