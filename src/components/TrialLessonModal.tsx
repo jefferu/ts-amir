@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { X, CheckCircle2, Calendar, Phone, MapPin, Award, Clock } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
+import { getAssetUrl } from "@/utils/assets";
 
 interface TrialLessonModalProps {
   isOpen: boolean;
@@ -53,9 +54,11 @@ export default function TrialLessonModal({
         {/* Header */}
         <div className="bg-slate-900 text-white px-6 py-5 flex items-center justify-between border-b border-slate-800">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-lime-400 flex items-center justify-center text-slate-950 font-black shadow-md">
-              🎾
-            </div>
+            <img
+              src={getAssetUrl("/images/logo-amir.png")}
+              alt="Logo"
+              className="h-11 w-auto object-contain"
+            />
             <div>
               <span className="text-[11px] font-bold tracking-widest text-lime-400 uppercase">
                 TS-Amir Tennis Akademie

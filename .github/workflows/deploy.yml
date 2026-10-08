@@ -39,6 +39,7 @@ jobs:
         run: npm run build
         env:
           EXPORT_STATIC: "true"
+          NEXT_PUBLIC_BASE_PATH: "/ts-amir"
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

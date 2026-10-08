@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Trophy, ShieldCheck, Heart } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
+import { getAssetUrl } from "@/utils/assets";
 
 interface FooterProps {
   onOpenLegal: (type: "impressum" | "datenschutz") => void;
@@ -21,13 +22,20 @@ export default function Footer({ onOpenLegal, onOpenBooking }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
           {/* Brand Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-lime-400 text-slate-950 flex items-center justify-center font-black text-lg">
-                🎾
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src={getAssetUrl("/images/logo-amir.png")}
+                alt="Tennisschule Amir Logo"
+                className="h-12 w-auto object-contain"
+              />
+              <div>
+                <span className="text-lg font-black tracking-tight text-white block">
+                  TENNISSCHULE <span className="text-lime-400">AMIR</span>
+                </span>
+                <span className="text-[10px] text-slate-400 tracking-wider uppercase font-semibold">
+                  Akademie Darmstadt & Weiterstadt
+                </span>
               </div>
-              <span className="text-xl font-black tracking-tight text-white">
-                TS-<span className="text-lime-400">AMIR</span> TENNIS
-              </span>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm mb-6">

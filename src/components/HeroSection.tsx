@@ -3,6 +3,7 @@
 import React from "react";
 import { ArrowRight, Trophy, Sparkles, CheckCircle2, ShieldCheck, MapPin } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
+import { getAssetUrl } from "@/utils/assets";
 
 interface HeroSectionProps {
   onOpenBooking: (program?: string) => void;
@@ -146,10 +147,12 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
               </div>
 
               {/* Floating Credential Card 1 (Top Right) */}
-              <div className="absolute -top-6 -right-6 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-slate-200/80 animate-fade-in">
-                <div className="w-10 h-10 rounded-xl bg-slate-950 text-lime-400 flex items-center justify-center font-black text-sm">
-                  ATP
-                </div>
+              <div className="absolute -top-6 -right-6 hidden sm:flex items-center gap-3 p-3 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-slate-200/80 animate-fade-in">
+                <img
+                  src={getAssetUrl("/images/official_atp_certified.png")}
+                  alt="Official ATP Certified"
+                  className="h-10 w-auto object-contain"
+                />
                 <div>
                   <div className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">
                     Höchste Lizenz

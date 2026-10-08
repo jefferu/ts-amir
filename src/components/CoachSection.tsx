@@ -12,6 +12,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
+import { getAssetUrl } from "@/utils/assets";
 
 interface CoachSectionProps {
   onOpenBooking: () => void;
@@ -29,13 +30,13 @@ export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
           {/* Visual Column */}
           <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-100 bg-slate-900">
+            <div className="relative mx-auto max-w-md rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-100 bg-gradient-to-b from-slate-800 to-slate-950 flex items-center justify-center pt-6">
               <img
-                src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80"
-                alt="Amir Reza Cheftrainer"
-                className="w-full h-[520px] object-cover object-top opacity-90 hover:scale-105 transition-transform duration-700"
+                src={getAssetUrl("/images/amir.png")}
+                alt="Cheftrainer Amir Reza"
+                className="w-auto h-[480px] object-contain object-bottom hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none"></div>
 
               {/* Floating Quote Card */}
               <div className="absolute bottom-5 left-5 right-5 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl">

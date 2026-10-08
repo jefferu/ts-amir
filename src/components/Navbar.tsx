@@ -15,6 +15,7 @@ import {
   Layers,
 } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
+import { getAssetUrl } from "@/utils/assets";
 
 interface NavbarProps {
   onOpenBooking: (program?: string) => void;
@@ -42,22 +43,24 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 py-2.5"
-            : "bg-white/90 backdrop-blur-sm border-b border-slate-100 py-3.5"
+            ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 py-2"
+            : "bg-white/90 backdrop-blur-sm border-b border-slate-100 py-3"
         }`}
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between">
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group select-none">
-            <div className="w-10 h-10 rounded-2xl bg-slate-900 text-lime-400 flex items-center justify-center font-black text-xl shadow-md group-hover:bg-lime-400 group-hover:text-slate-950 transition-colors">
-              🎾
-            </div>
+          {/* Brand Logo with Official TS-Amir Crest */}
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group select-none py-0.5">
+            <img
+              src={getAssetUrl("/images/logo-amir.png")}
+              alt="Tennisschule Amir"
+              className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            />
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 leading-none">
-                TS-<span className="text-lime-600">AMIR</span>
+              <span className="text-base sm:text-lg font-black tracking-tight text-slate-950 leading-tight">
+                TENNISSCHULE <span className="text-lime-600">AMIR</span>
               </span>
-              <span className="text-[9px] font-extrabold tracking-widest text-slate-500 uppercase mt-0.5">
-                Tennis Akademie Darmstadt
+              <span className="text-[9px] font-extrabold tracking-widest text-slate-500 uppercase">
+                Akademie Darmstadt & Weiterstadt
               </span>
             </div>
           </Link>
