@@ -4,6 +4,7 @@ import React from "react";
 import { ArrowRight, Trophy, Sparkles, CheckCircle2, ShieldCheck, MapPin } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
 import { getAssetUrl } from "@/utils/assets";
+import TennisBall from "@/components/TennisBall";
 
 interface HeroSectionProps {
   onOpenBooking: (program?: string) => void;
@@ -22,8 +23,8 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-lime-400 text-xs font-black tracking-widest uppercase mb-6 self-start shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-lime-400 animate-ping"></span>
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900 text-lime-400 text-xs font-black tracking-widest uppercase mb-6 self-start shadow-sm">
+              <TennisBall size={15} />
               <span>{TENNIS_DATA.general.tagline}</span>
             </div>
 
@@ -97,9 +98,9 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 aspect-[4/5]">
                 <img
-                  src="https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=1200&q=80"
-                  alt="Tennistraining auf roter Asche"
-                  className="w-full h-full object-cover opacity-85 hover:scale-105 transition-transform duration-700"
+                  src={getAssetUrl("/images/amir-hero.jpg")}
+                  alt="Cheftrainer Amir Reza GPTCA ATP Lizenz"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
