@@ -396,7 +396,7 @@ export const TENNIS_DATA = {
       date: "Jetzt anmelden",
       description:
         "Die Tennisschule Amir übernimmt das Vereinstraining der SG Weiterstadt. Hallenplätze, Schnupperstunden und Gruppenkurse jetzt sichern!",
-      image: "https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?auto=format&fit=crop&w=800&q=80",
+      image: "/images/announcement-winter.jpg",
       ctaText: "Zur Anmeldung",
       badge: "Neu",
     },
@@ -407,7 +407,7 @@ export const TENNIS_DATA = {
       date: "Ganzjährig",
       description:
         "Möchten Sie oder Ihr Kind Tennis ausprobieren? Vereinbaren Sie noch heute ein kostenloses Schnuppertraining inklusive Leihausrüstung.",
-      image: "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=800&q=80",
+      image: "/images/announcement-trial.jpg",
       ctaText: "Termin buchen",
       badge: "Kostenlos",
     },
@@ -418,7 +418,7 @@ export const TENNIS_DATA = {
       date: "Ostern & Sommer",
       description:
         "Intensiv-Tenniscamps für Kids & Jugendliche. Täglich 4 Stunden Tennis, Athletik, Vollverpflegung und großes Abschlussturnier.",
-      image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80",
+      image: "/images/announcement-camps.jpg",
       ctaText: "Camp-Plätze prüfen",
       badge: "Beliebt",
     },
@@ -429,7 +429,7 @@ export const TENNIS_DATA = {
       date: "24h Express",
       description:
         "Neueste Yonex Rackets direkt auf dem Platz testen. Professioneller 24h-Bespannungsservice mit Premium-Saiten für perfekten Touch.",
-      image: "https://images.unsplash.com/photo-1530915536412-2eb318f72c4f?auto=format&fit=crop&w=800&q=80",
+      image: "/images/announcement-yonex.jpg",
       ctaText: "Service anfragen",
       badge: "Yonex",
     },

@@ -3,6 +3,7 @@
 import React from "react";
 import { MapPin, Clock, Shield, Check, Phone, Mail, ArrowUpRight } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
+import { getAssetUrl } from "@/utils/assets";
 
 interface LocationsSectionProps {
   onOpenBooking: (program?: string) => void;
@@ -37,11 +38,11 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
               <div>
                 <div className="relative h-60 overflow-hidden bg-slate-900">
                   <img
-                    src={
+                    src={getAssetUrl(
                       loc.id === "weiterstadt"
-                        ? "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1000&q=80"
-                        : "https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?auto=format&fit=crop&w=1000&q=80"
-                    }
+                        ? "/images/location-weiterstadt.jpg"
+                        : "/images/location-pfungstadt.jpg"
+                    )}
                     alt={loc.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />

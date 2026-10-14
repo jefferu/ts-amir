@@ -3,6 +3,7 @@
 import React from "react";
 import { ArrowRight, BellRing, Sparkles, Calendar, Check } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
+import { getAssetUrl } from "@/utils/assets";
 
 interface AnnouncementsSectionProps {
   onOpenBooking: (program?: string) => void;
@@ -38,7 +39,7 @@ export default function AnnouncementsSection({
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-slate-900">
                 <img
-                  src={item.image}
+                  src={getAssetUrl(item.image)}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
