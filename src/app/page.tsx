@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-lime-300 selection:text-slate-950">
-      <Navbar onOpenBooking={handleOpenBooking} />
+      <Navbar onOpenBooking={handleOpenBooking} onOpenLegal={handleOpenLegal} />
 
       <main className="flex-1">
         <HeroSection onOpenBooking={handleOpenBooking} />

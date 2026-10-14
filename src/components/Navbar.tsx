@@ -19,9 +19,10 @@ import { getAssetUrl } from "@/utils/assets";
 
 interface NavbarProps {
   onOpenBooking: (program?: string) => void;
+  onOpenLegal: (type: "impressum" | "datenschutz") => void;
 }
 
-export default function Navbar({ onOpenBooking }: NavbarProps) {
+export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -315,7 +316,28 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
           <div className="pt-8 text-center text-xs text-slate-500">
             <p>Offizieller Partner der Rafa Nadal Academy</p>
-            <p className="mt-1">© 2026 Tennisschule Amir Reza</p>
+            <div className="mt-2 flex items-center justify-center gap-3 text-slate-600 font-semibold">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenLegal("impressum");
+                }}
+                className="hover:text-slate-900 transition underline-offset-2 hover:underline"
+              >
+                Impressum
+              </button>
+              <span>·</span>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenLegal("datenschutz");
+                }}
+                className="hover:text-slate-900 transition underline-offset-2 hover:underline"
+              >
+                Datenschutz
+              </button>
+            </div>
+            <p className="mt-2 text-[11px] text-slate-400">© 2026 Tennisschule Amir Reza</p>
           </div>
         </div>
       )}
