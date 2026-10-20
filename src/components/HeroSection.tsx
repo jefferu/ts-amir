@@ -98,9 +98,9 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
             <div className="relative mx-auto max-w-md lg:max-w-none">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 aspect-[4/5]">
                 <img
-                  src={getAssetUrl("/images/amir-hero.jpg")}
-                  alt="Cheftrainer Amir Reza GPTCA ATP Lizenz"
-                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                  src={getAssetUrl("/images/amir-portrait.jpg")}
+                  alt="Cheftrainer Amir Reza"
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
