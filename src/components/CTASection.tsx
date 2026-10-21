@@ -23,13 +23,13 @@ export default function CTASection({ onOpenBooking }: CTASectionProps) {
 
         <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight mb-6">
           Bereit für deinen ersten Aufschlag <br />
-          <span className="text-lime-400">mit Cheftrainer Amir?</span>
+          <span className="text-lime-400">mit Amir & seinem Trainerteam?</span>
         </h2>
 
         <p className="text-sm sm:text-base text-slate-300 max-w-xl mx-auto mb-10 leading-relaxed">
           Schließe dich hunderten begeisterten Spielern in Darmstadt und
-          Weiterstadt an. Schnupper unverbindlich rein, verbessere dein Spiel
-          oder starte deine Turnierkarriere.
+          Weiterstadt an. Cheftrainer Amir Reza und sein 10-köpfiges Trainerteam
+          freuen sich darauf, dein Tennis aufs nächste Level zu heben.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -53,7 +53,7 @@ export default function CTASection({ onOpenBooking }: CTASectionProps) {
         <div className="flex flex-wrap justify-center gap-6 sm:gap-10 text-xs font-bold text-slate-300">
           <span className="flex items-center gap-2">
             <CheckCircle2 size={16} className="text-lime-400" />
-            Keine Vereinsbindung nötig
+            10-köpfiges Trainerteam
           </span>
           <span className="flex items-center gap-2">
             <CheckCircle2 size={16} className="text-lime-400" />
@@ -61,7 +61,7 @@ export default function CTASection({ onOpenBooking }: CTASectionProps) {
           </span>
           <span className="flex items-center gap-2">
             <CheckCircle2 size={16} className="text-lime-400" />
-            2 Top-Standorte
+            Halle & Sandplätze
           </span>
           <span className="flex items-center gap-2">
             <CheckCircle2 size={16} className="text-lime-400" />

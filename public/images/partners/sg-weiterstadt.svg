@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <defs>
+    <linearGradient id="sgwGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="60" rx="8" fill="url(#sgwGrad)" />
+  <circle cx="30" cy="30" r="18" fill="#a3e635" fill-opacity="0.15" stroke="#a3e635" stroke-width="1.5" />
+  <path d="M22 25 L38 35 M22 35 L38 25" stroke="#a3e635" stroke-width="1.5" stroke-linecap="round" />
+  <circle cx="30" cy="30" r="4" fill="#a3e635" />
+  <text x="56" y="27" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="900" letter-spacing="0.5">SG WEITERSTADT</text>
+  <text x="56" y="42" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="700" letter-spacing="1">TENNIS CLUB & ANLAGE</text>
+</svg>

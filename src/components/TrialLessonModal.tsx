@@ -82,7 +82,7 @@ export default function TrialLessonModal({
               </h4>
               <p className="text-slate-600 max-w-md mx-auto mb-6 text-sm leading-relaxed">
                 Vielen Dank, <strong>{formData.name || "Sportfreund"}</strong>!
-                Cheftrainer Amir Reza meldet sich innerhalb von 24 Stunden
+                Cheftrainer Amir Reza oder unser Trainerteam meldet sich innerhalb von 24 Stunden
                 telefonisch oder per E-Mail bei dir, um den optimalen Termin für
                 deine Schnupperstunde abzustimmen.
               </p>
@@ -91,12 +91,8 @@ export default function TrialLessonModal({
                 <div className="flex items-center gap-2">
                   <MapPin size={15} className="text-lime-600 flex-shrink-0" />
                   <span>
-                    Gewählter Standort:{" "}
-                    <strong>
-                      {formData.location === "weiterstadt"
-                        ? "SG Weiterstadt (Halle & Sand)"
-                        : "TC Pfungstadt"}
-                    </strong>
+                    Trainingsstandort:{" "}
+                    <strong>SG Weiterstadt Tennis (Halle & Sand)</strong>
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -228,7 +224,7 @@ export default function TrialLessonModal({
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
-                    Wunsch-Standort
+                    Standort
                   </label>
                   <select
                     value={formData.location}
@@ -237,8 +233,7 @@ export default function TrialLessonModal({
                     }
                     className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-lime-400 bg-white"
                   >
-                    <option value="weiterstadt">SG Weiterstadt</option>
-                    <option value="pfungstadt">TC Pfungstadt</option>
+                    <option value="weiterstadt">SG Weiterstadt Tennis</option>
                   </select>
                 </div>
               </div>

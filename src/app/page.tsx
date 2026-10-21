@@ -11,15 +11,26 @@ import CampsSection from "@/components/CampsSection";
 import PricingSection from "@/components/PricingSection";
 import TrainingPhilosophySection from "@/components/TrainingPhilosophySection";
 import EquipmentSection from "@/components/EquipmentSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import TrialLessonModal from "@/components/TrialLessonModal";
 import LegalModal from "@/components/LegalModal";
+import VoucherModal from "@/components/VoucherModal";
 
 export default function Home() {
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [voucherOpen, setVoucherOpen] = useState(false);
   const [selectedProgram, setSelectedProgram] = useState<string | undefined>();
   const [legalModalType, setLegalModalType] = useState<"impressum" | "datenschutz" | null>(null);
+
+  const handleOpenVoucher = () => {
+    setVoucherOpen(true);
+  };
+
+  const handleCloseVoucher = () => {
+    setVoucherOpen(false);
+  };
 
   const handleOpenBooking = (program?: string) => {
     setSelectedProgram(program);
@@ -41,7 +52,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 selection:bg-lime-300 selection:text-slate-950">
-      <Navbar onOpenBooking={handleOpenBooking} onOpenLegal={handleOpenLegal} />
+      <Navbar onOpenBooking={handleOpenBooking} onOpenLegal={handleOpenLegal} onOpenVoucher={handleOpenVoucher} />
 
       <main className="flex-1">
         <HeroSection onOpenBooking={handleOpenBooking} />
@@ -50,18 +61,24 @@ export default function Home() {
         <ProgramsSection onOpenBooking={handleOpenBooking} />
         <CoachSection onOpenBooking={handleOpenBooking} />
         <CampsSection onOpenBooking={handleOpenBooking} />
-        <PricingSection onOpenBooking={handleOpenBooking} />
+        <PricingSection onOpenBooking={handleOpenBooking} onOpenVoucher={handleOpenVoucher} />
         <TrainingPhilosophySection />
         <EquipmentSection onOpenBooking={handleOpenBooking} />
+        <TestimonialsSection />
         <CTASection onOpenBooking={handleOpenBooking} />
       </main>
 
-      <Footer onOpenLegal={handleOpenLegal} onOpenBooking={handleOpenBooking} />
+      <Footer onOpenLegal={handleOpenLegal} onOpenBooking={handleOpenBooking} onOpenVoucher={handleOpenVoucher} />
 
       <TrialLessonModal
         isOpen={bookingOpen}
         onClose={handleCloseBooking}
         initialProgram={selectedProgram}
+      />
+
+      <VoucherModal
+        isOpen={voucherOpen}
+        onClose={handleCloseVoucher}
       />
 
       <LegalModal

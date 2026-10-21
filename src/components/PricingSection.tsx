@@ -1,14 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, ArrowRight, ShieldCheck, Sparkles, HelpCircle } from "lucide-react";
+import { Check, ArrowRight, ShieldCheck, Sparkles, HelpCircle, Gift } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
 
 interface PricingSectionProps {
   onOpenBooking: (program?: string) => void;
+  onOpenVoucher?: () => void;
 }
 
-export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
+export default function PricingSection({ onOpenBooking, onOpenVoucher }: PricingSectionProps) {
   const [season, setSeason] = useState<"winter" | "summer" | "packages">("winter");
 
   const currentCards =
@@ -30,7 +31,7 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
           </h2>
           <div className="mt-3.5 h-1.5 w-16 bg-lime-400 mx-auto rounded-full"></div>
           <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
-            In Kooperation mit der SG Weiterstadt und dem TC Pfungstadt. Feste
+            In Kooperation mit der SG Weiterstadt Tennis. Feste
             4er-Gruppen, geprüfte DTB/ATP-Trainer und volle Kostentransparenz.
           </p>
         </div>
@@ -146,6 +147,33 @@ export default function PricingSection({ onOpenBooking }: PricingSectionProps) {
             eingesetzt, um maximale Betreuungsqualität und Schlaganzahl zu
             gewährleisten.
           </p>
+        </div>
+
+        <div className="mt-8 max-w-3xl mx-auto bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white rounded-3xl p-6 sm:p-7 border border-lime-400/30 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-40 h-40 bg-lime-400/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-lime-400 text-slate-950 flex items-center justify-center flex-shrink-0 shadow-md">
+              <Gift size={24} />
+            </div>
+            <div>
+              <span className="text-[10px] font-black uppercase tracking-widest text-lime-400">
+                Geschenkidee
+              </span>
+              <h3 className="text-lg sm:text-xl font-black text-white tracking-tight mt-0.5">
+                Tennistraining als Gutschein verschenken
+              </h3>
+              <p className="text-xs text-slate-300 mt-1 max-w-md">
+                Verschenken Sie sportliche Momente: Ob Einzeltraining, 10er-Karte oder flexibler Wertgutschein – digital per PDF oder als edle Geschenkkarte.
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => onOpenVoucher?.()}
+            className="w-full sm:w-auto px-6 py-3 rounded-full bg-lime-400 hover:bg-lime-300 text-slate-950 font-bold text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lime-400/20 active:scale-95 flex-shrink-0 flex items-center justify-center gap-2"
+          >
+            <Gift size={15} />
+            <span>Gutschein anfragen</span>
+          </button>
         </div>
       </div>
     </section>

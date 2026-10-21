@@ -4,7 +4,7 @@ Offizielle Webseite & Demo für die Tennisschule Amir Reza (Darmstadt & Weiterst
 
 ## Übersicht
 - Cheftrainer: Amir Reza (ATP A-Level Coach & ehem. Davis Cup Spieler)
-- Standorte: SG Weiterstadt Tennis & TC Pfungstadt
+- Standort: SG Weiterstadt Tennis
 - Partner: Yonex Tennis & Rafa Nadal Academy Talent Scouting
 
 ## Entwicklung

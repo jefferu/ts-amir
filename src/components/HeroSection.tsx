@@ -29,8 +29,9 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.08] mb-6">
-              Darmstadts Adresse <br />
-              <span className="text-lime-600 bg-clip-text">für modernes Tennis.</span>
+              Tennistraining, das dein <br />
+              Spiel auf das <span className="text-lime-600">nächste</span> <br />
+              <span className="text-emerald-600">Level</span> hebt.
             </h1>
 
             <div className="h-1.5 w-20 bg-lime-400 rounded-full mb-6"></div>
@@ -78,14 +79,14 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
               </a>
             </div>
 
-            <div className="mt-10 pt-6 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs font-bold text-slate-600">
+            <div className="mt-10 pt-6 border-t border-slate-200/80 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-bold text-slate-600">
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-lime-600 flex-shrink-0" />
-                <span>Keine Vereinsbindung nötig</span>
+                <span>10-köpfiges Trainerteam</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-lime-600 flex-shrink-0" />
-                <span>ATP A-Level zertifiziert</span>
+                <span>ATP A-Level Cheftrainer</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-lime-600 flex-shrink-0" />
@@ -103,27 +104,27 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                   className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 via-50% to-transparent"></div>
 
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
                   <span className="px-3 py-1 rounded-full text-[11px] font-black tracking-wider uppercase bg-lime-400 text-slate-950 shadow-md">
-                    SG Weiterstadt & TCP
+                    SG Weiterstadt Tennis
                   </span>
                   <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-white/90 text-slate-900 backdrop-blur-md shadow-md">
                     Winter & Sommer
                   </span>
                 </div>
 
-                <div className="absolute bottom-5 left-5 right-5 text-white">
+                <div className="absolute bottom-20 sm:bottom-24 left-5 right-5 text-white">
                   <div className="flex items-center gap-2 text-lime-400 text-xs font-black uppercase tracking-wider mb-1">
                     <Trophy size={14} />
                     <span>Davis Cup Erfahrung</span>
                   </div>
                   <h3 className="text-2xl font-black leading-tight text-white mb-2">
-                    Cheftrainer Amir Reza
+                    Cheftrainer Amir Reza & Team
                   </h3>
                   <p className="text-xs text-slate-300 leading-snug line-clamp-2">
-                    Ehemaliger Weltranglistenspieler, GPTCA/ATP A-Level zertifiziert & Talent Scout der Rafa Nadal Academy.
+                    Davis-Cup-Erfahrung, ATP A-Level Zertifizierung & ein starkes 10-köpfiges Trainerteam für alle Spielstärken.
                   </p>
                 </div>
               </div>
@@ -143,11 +144,12 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                   </div>
                 </div>
               </div>
-
               <div className="absolute -bottom-4 -left-2 sm:-left-4 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-slate-200 z-10 animate-fade-in">
-                <div className="w-10 h-10 rounded-xl bg-lime-400 text-slate-950 flex items-center justify-center font-black text-sm shadow-sm">
-                  RNA
-                </div>
+                <img
+                  src={getAssetUrl("/images/rafa-nadal-academy-logo.png")}
+                  alt="Rafa Nadal Academy"
+                  className="w-11 h-11 rounded-xl object-cover shadow-sm border border-slate-100 flex-shrink-0"
+                />
                 <div className="pr-1">
                   <div className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">
                     Offizieller Partner

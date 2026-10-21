@@ -10,6 +10,7 @@ import {
   Sparkles,
   ExternalLink,
   ChevronRight,
+  Users,
 } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
 import { getAssetUrl } from "@/utils/assets";
@@ -51,15 +52,27 @@ export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight leading-tight mb-2">
-              Cheftrainer Amir Reza
+              Cheftrainer Amir Reza & Trainerteam
             </h2>
             <p className="text-sm font-extrabold uppercase tracking-wider text-lime-700 mb-6">
-              Ehemaliger Davis-Cup-Spieler & ATP / GPTCA A-Level Coach
+              Sportliche Leitung durch Davis-Cup-Spieler & ATP A-Level Coach – unterstützt von 10 qualifizierten Trainerinnen & Trainern
             </p>
 
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
               {TENNIS_DATA.coach.bio}
             </p>
+
+            <div className="p-4 sm:p-5 rounded-2xl bg-lime-50/80 border border-lime-200 mb-6 flex items-start gap-3.5">
+              <Users className="text-lime-700 flex-shrink-0 mt-0.5" size={20} />
+              <div>
+                <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-1">
+                  Starkes 10-köpfiges Trainerteam für alle Altersklassen
+                </div>
+                <p className="text-xs text-slate-700 leading-relaxed">
+                  Hinter Cheftrainer Amir steht ein eingespieltes Team aus 10 lizenzierten Trainerinnen und Trainern, Jugend- und Athletik-Coaches. So garantieren wir maximale Flexibilität bei den Trainingszeiten, passgenaue Spielstärkengruppen und persönliche Betreuung von der Ballschule bis zur Medenmannschaft.
+                </p>
+              </div>
+            </div>
 
             <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 mb-8">
               <div className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2 flex items-center gap-1.5">
@@ -82,7 +95,7 @@ export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
                 onClick={onOpenBooking}
                 className="px-6 py-3.5 rounded-full bg-slate-900 text-white font-bold text-xs tracking-wide hover:bg-slate-800 transition shadow-md flex items-center justify-center gap-2"
               >
-                <span>Training bei Amir anfragen</span>
+                <span>Training beim Trainerteam anfragen</span>
                 <ChevronRight size={14} className="text-lime-400" />
               </button>
 

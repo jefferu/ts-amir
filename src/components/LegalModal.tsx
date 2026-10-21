@@ -69,11 +69,9 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
               </div>
 
               <div>
-                <h4 className="font-bold text-slate-900 mb-1">Trainingsstätten & Kooperationspartner</h4>
+                <h4 className="font-bold text-slate-900 mb-1">Trainingsstätte & Kooperationspartner</h4>
                 <p>
                   • SG Weiterstadt Tennis (Am Sportpark 1, 64331 Weiterstadt)
-                  <br />
-                  • TC Pfungstadt (Christian-Stock-Straße 34, 64319 Pfungstadt)
                 </p>
               </div>
 

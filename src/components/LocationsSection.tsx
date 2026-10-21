@@ -19,7 +19,7 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
             <span>Wo wir trainieren</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight leading-tight">
-            Zwei Top-Standorte im Raum Darmstadt & Weiterstadt
+            Unser Trainingsstandort: SG Weiterstadt Tennis
           </h2>
           <div className="mt-4 h-1.5 w-16 bg-lime-400 rounded-full"></div>
           <p className="mt-4 text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -29,20 +29,16 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="max-w-3xl mx-auto">
           {TENNIS_DATA.locations.map((loc) => (
             <div
               key={loc.id}
               className="group bg-slate-50/70 rounded-3xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                <div className="relative h-60 overflow-hidden bg-slate-900">
+                <div className="relative h-64 sm:h-72 overflow-hidden bg-slate-900">
                   <img
-                    src={getAssetUrl(
-                      loc.id === "weiterstadt"
-                        ? "/images/location-weiterstadt.jpg"
-                        : "/images/location-pfungstadt.jpg"
-                    )}
+                    src={getAssetUrl("/images/location-weiterstadt.jpg")}
                     alt={loc.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
@@ -115,7 +111,7 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
 
         <div className="mt-12 text-center text-xs sm:text-sm text-slate-500 flex flex-wrap items-center justify-center gap-4">
           <span className="flex items-center gap-1.5">
-            <Check size={16} className="text-lime-600" /> Keine feste Vereinsmitgliedschaft zum Schnuppern nötig
+            <Check size={16} className="text-lime-600" /> Schnupperstunden & Kurse ganzjährig buchbar
           </span>
           <span className="hidden sm:inline">·</span>
           <span>

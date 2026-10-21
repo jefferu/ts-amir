@@ -53,6 +53,16 @@ export interface Achievement {
   details: string;
 }
 
+export interface Partner {
+  id: string;
+  name: string;
+  role: string;
+  description: string;
+  logo: string;
+  category: "equipment" | "sponsor" | "academy" | "club";
+  url?: string;
+}
+
 export const TENNIS_DATA = {
   general: {
     schoolName: "Tennisschule Amir",
@@ -63,11 +73,15 @@ export const TENNIS_DATA = {
     clubEmail: "tennis@sg-weiterstadt.de",
     address: "Gerlachshöhe 28a, 64367 Mühltal",
     taxNumber: "0786032189",
-    mainLocation: "SG Weiterstadt & TC Pfungstadt",
+    mainLocation: "SG Weiterstadt Tennis",
+    social: {
+      instagram: "https://www.instagram.com/tennisschuleamir/",
+      facebook: "https://www.facebook.com/amiracademy/?locale=de_DE",
+    },
     tagline: "LEIDENSCHAFT · PRÄZISION · ERFOLG",
-    heroHeading: "Darmstadts Adresse für modernes Tennis.",
+    heroHeading: "Tennistraining, das dein Spiel auf das nächste Level hebt.",
     heroSubheading:
-      "ATP A-Level zertifiziertes Training unter Leitung von ehem. Davis-Cup-Spieler Amir Reza. Vom ersten Schlag der Ballschule bis zur Turnierreife – mit Leidenschaft, Spaß und modernster Methodik.",
+      "ATP A-Level zertifiziertes Training unter Leitung von Davis-Cup-Spieler Amir Reza und seinem 10-köpfigen Trainerteam. Vom ersten Schlag der Ballschule bis zur Turnierreife – mit Leidenschaft, Spaß und modernster Methodik.",
   },
   coach: {
     name: "Amir Reza",
@@ -144,9 +158,9 @@ export const TENNIS_DATA = {
       badgeColor: "bg-lime-400 text-slate-900",
       address: "Am Sportpark 1",
       city: "64331 Weiterstadt",
-      courts: "6 Sandplätze (Außenanlage)",
+      courts: "12 Sandplätze (Außenanlage)",
       indoor: "Moderne Tennishalle (Ganzjahresbetrieb)",
-      hours: "Mo–So: 08:00 – 22:00 Uhr",
+      hours: "Mo–So: 08:00 – 21:00 Uhr",
       description:
         "Seit der Wintersaison 2025/26 ist die Tennisschule Amir offizieller Trainingspartner der SG Weiterstadt. Hier bieten wir ganzjähriges Training für alle Spielstärken, Schnupperkurse und Camps.",
       contactEmail: "tennis@sg-weiterstadt.de",
@@ -156,27 +170,6 @@ export const TENNIS_DATA = {
         "Gepflegte Außen-Sandplätze im Sommer",
         "Clubhaus & Gastronomie",
         "Kostenlose Parkplätze direkt vor Ort",
-      ],
-    },
-    {
-      id: "pfungstadt",
-      name: "TC Pfungstadt",
-      badge: "Traditionspartner & Medenrunden",
-      badgeColor: "bg-sky-500 text-white",
-      address: "Christian-Stock-Straße 34",
-      city: "64319 Pfungstadt",
-      courts: "7 Sandplätze im Grünen",
-      indoor: "Hallenkooperation & Athletikbereich",
-      hours: "Mo–So: 08:00 – 21:00 Uhr",
-      description:
-        "Langjähriger Kooperationspartner mit erfolgreichen Jugend- und Erwachsenenmannschaften. Hier trainieren viele unserer Medenrunden- und Bezirksmeister.",
-      contactEmail: "info@ts-amir.de",
-      contactPhone: "0162 - 420 76 61",
-      highlights: [
-        "Idyllische Clubanlage am Waldrand",
-        "Starke Kinder- & Jugendabteilung",
-        "Regelmäßige Sommer- und Feriencamps",
-        "Vereinsturniere & gesellige Club-Events",
       ],
     },
   ],
@@ -244,7 +237,7 @@ export const TENNIS_DATA = {
       age: "Alle Altersklassen",
       level: "Individuell nach Wunsch",
       description:
-        "Exklusives 1-zu-1 oder 1-zu-2 Coaching direkt mit Cheftrainer Amir Reza. Tiefgehende Videoanalyse, biomechanische Schlagoptimierung und mentales Match-Coaching.",
+        "Exklusives 1-zu-1 oder 1-zu-2 Coaching bei Cheftrainer Amir Reza und seinem qualifizierten Trainerteam. Tiefgehende Videoanalyse, biomechanische Schlagoptimierung und individuelles Match-Coaching.",
       features: [
         "100% maßgeschneiderter Trainingsplan",
         "Flexible Terminabsprache nach Ihrem Kalender",
@@ -259,7 +252,7 @@ export const TENNIS_DATA = {
     {
       id: "camps",
       category: "camps",
-      title: "Intensiv-Feriencamps (Ostern & Sommer)",
+      title: "Intensiv-Feriencamps (Ostern, Sommer, Herbst & Winter)",
       age: "6 – 16 Jahre & Erwachsene",
       level: "Alle Spielstärken",
       description:
@@ -328,7 +321,7 @@ export const TENNIS_DATA = {
           "Ab 5 Kids: 2 Trainer",
           "Auf gepflegten Sandplätzen",
           "Schlechtwetter-Hallenoption falls nötig",
-          "Ort: SG Weiterstadt / TC Pfungstadt",
+          "Ort: SG Weiterstadt Tennis",
         ],
         popular: false,
       },
@@ -341,7 +334,7 @@ export const TENNIS_DATA = {
           "Matchpraxis für Medenspiele",
           "Inklusive Turnierbetreuung",
           "Schlechtwetter-Garantie",
-          "Ort: SG Weiterstadt / TC Pfungstadt",
+          "Ort: SG Weiterstadt Tennis",
         ],
         popular: true,
       },
@@ -354,7 +347,7 @@ export const TENNIS_DATA = {
           "After-Work Gruppentraining",
           "Schlagrhythmus auf roter Asche",
           "Club-Atmosphäre & Geselligkeit",
-          "Ort: SG Weiterstadt / TC Pfungstadt",
+          "Ort: SG Weiterstadt Tennis",
         ],
         popular: false,
       },
@@ -365,7 +358,7 @@ export const TENNIS_DATA = {
         price: "550",
         period: "10 Trainerstunden à 60 Min.",
         features: [
-          "1-zu-1 Intensivcoaching mit Amir Reza",
+          "1-zu-1 Intensivcoaching bei Amir Reza & Trainerteam",
           "Freie Trainer- & Terminauswahl",
           "Bevorzugte Hallen- & Platzreservierung",
           "Detaillierte Video- & Schlaganalyse",
@@ -379,7 +372,7 @@ export const TENNIS_DATA = {
         period: "Einmalige 45-Minuten Session",
         features: [
           "Kostenlose Einstufung Ihrer Spielstärke",
-          "Kennenlernen von Cheftrainer Amir",
+          "Training bei Cheftrainer Amir & seinem Trainerteam",
           "Schläger- und Ballmaterial gratis gestellt",
           "Unverbindliche Beratung für Folgekurse",
           "Für Kids, Jugendliche und Erwachsene",
@@ -413,11 +406,11 @@ export const TENNIS_DATA = {
     },
     {
       id: "summer-camp",
-      title: "Sommer- & Oster-Camps 2026",
+      title: "Oster-, Sommer-, Herbst- & Winter-Camps 2026",
       tag: "Ferienspaß",
-      date: "Ostern & Sommer",
+      date: "Ostern, Sommer, Herbst & Winter",
       description:
-        "Intensiv-Tenniscamps für Kids & Jugendliche. Täglich 4 Stunden Tennis, Athletik, Vollverpflegung und großes Abschlussturnier.",
+        "Intensiv-Tenniscamps für Kids & Jugendliche zu allen hessischen Ferienzeiten. Täglich 4 Stunden Tennis, Athletik, Vollverpflegung und großes Abschlussturnier.",
       image: "/images/announcement-camps.jpg",
       ctaText: "Camp-Plätze prüfen",
       badge: "Beliebt",
@@ -454,6 +447,61 @@ export const TENNIS_DATA = {
       title: "24h Schlägerbespannung",
       description:
         "Professionelle Besaitung nach Maß. Wir stimmen Kilogrammzahl, Saitenstruktur und Dämpfung perfekt auf Ihren Spielstil ab.",
+    },
+  ],
+  partners: [
+    {
+      id: "yonex",
+      name: "Yonex",
+      role: "Offizieller Racket- & Equipment-Partner",
+      description: "Schläger, Saiten & Testcenter",
+      logo: "/images/partners/yonex.jpg",
+      category: "equipment",
+      url: "https://www.yonex.de",
+    },
+    {
+      id: "merck",
+      name: "Merck",
+      role: "Regionaler Partner Darmstadt",
+      description: "Wissenschafts- & Technologiekonzern",
+      logo: "/images/partners/merck.jpg",
+      category: "sponsor",
+      url: "https://www.merckgroup.com",
+    },
+    {
+      id: "henschel",
+      name: "Henschel Darmstadt",
+      role: "Lifestyle- & Vorteilspartner",
+      description: "Modehaus am Marktplatz Darmstadt",
+      logo: "/images/partners/henschel.jpg",
+      category: "sponsor",
+      url: "https://henschel-darmstadt.de",
+    },
+    {
+      id: "adler",
+      name: "Adler",
+      role: "Regionaler Förderer",
+      description: "Traditionspartner der Tennisschule",
+      logo: "/images/partners/adler.svg",
+      category: "sponsor",
+    },
+    {
+      id: "rafa-nadal-academy",
+      name: "Rafa Nadal Academy",
+      role: "Offizieller Partner & Talent Scout",
+      description: "Mallorca Talentförderung",
+      logo: "/images/rafa-nadal-academy-logo.png",
+      category: "academy",
+      url: "https://www.rafanadalacademy.com",
+    },
+    {
+      id: "sg-weiterstadt",
+      name: "SG Weiterstadt Tennis",
+      role: "Vereins- & Anlagenpartner",
+      description: "Trainingsstützpunkt & Hallenplätze",
+      logo: "/images/partners/sg-weiterstadt.svg",
+      category: "club",
+      url: "#locations",
     },
   ],
 };

@@ -13,6 +13,7 @@ import {
   Trophy,
   Shield,
   Layers,
+  Gift,
 } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
 import { getAssetUrl } from "@/utils/assets";
@@ -20,9 +21,10 @@ import { getAssetUrl } from "@/utils/assets";
 interface NavbarProps {
   onOpenBooking: (program?: string) => void;
   onOpenLegal: (type: "impressum" | "datenschutz") => void;
+  onOpenVoucher?: () => void;
 }
 
-export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
+export default function Navbar({ onOpenBooking, onOpenLegal, onOpenVoucher }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -40,8 +42,8 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 py-2"
-            : "bg-white/90 backdrop-blur-sm border-b border-slate-100 py-3"
+            ? "bg-gradient-to-r from-lime-400 via-lime-400 to-lime-300 backdrop-blur-md shadow-lg border-b border-lime-500/50 py-2"
+            : "bg-gradient-to-r from-lime-400 via-lime-400 to-lime-300 backdrop-blur-md border-b border-lime-500/40 shadow-md py-3"
         }`}
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between">
@@ -49,13 +51,13 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
             <img
               src={getAssetUrl("/images/logo-amir.png")}
               alt="Tennisschule Amir"
-              className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+              className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-sm"
             />
             <div className="flex flex-col">
               <span className="text-base sm:text-lg font-black tracking-tight text-slate-950 leading-tight">
-                TENNISSCHULE <span className="text-lime-600">AMIR</span>
+                TENNISSCHULE <span className="text-slate-950">AMIR</span>
               </span>
-              <span className="text-[9px] font-extrabold tracking-widest text-slate-500 uppercase">
+              <span className="text-[9px] font-black tracking-widest text-slate-950/80 uppercase">
                 Akademie Darmstadt & Weiterstadt
               </span>
             </div>
@@ -67,9 +69,9 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
               onMouseEnter={() => setActiveDropdown("about")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-slate-950 rounded-lg hover:bg-slate-100 transition-colors">
+              <button className="flex items-center gap-1 px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors">
                 Über uns
-                <ChevronDown size={14} className="text-slate-400" />
+                <ChevronDown size={14} className="text-slate-950" />
               </button>
 
               {activeDropdown === "about" && (
@@ -115,9 +117,9 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
               onMouseEnter={() => setActiveDropdown("locations")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-slate-950 rounded-lg hover:bg-slate-100 transition-colors">
-                Standorte
-                <ChevronDown size={14} className="text-slate-400" />
+              <button className="flex items-center gap-1 px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors">
+                Standort
+                <ChevronDown size={14} className="text-slate-950" />
               </button>
 
               {activeDropdown === "locations" && (
@@ -133,16 +135,6 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
                         <div className="text-[11px] text-slate-500">Hauptstandort · Halle & Außenplätze</div>
                       </div>
                     </a>
-                    <a
-                      href="#locations"
-                      className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition text-slate-800"
-                    >
-                      <MapPin size={16} className="text-lime-600 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <div className="font-bold text-xs uppercase tracking-wide">TC Pfungstadt</div>
-                        <div className="text-[11px] text-slate-500">Traditionspartner · Sandplätze & Jugend</div>
-                      </div>
-                    </a>
                   </div>
                 </div>
               )}
@@ -153,9 +145,9 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
               onMouseEnter={() => setActiveDropdown("programs")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-slate-950 rounded-lg hover:bg-slate-100 transition-colors">
+              <button className="flex items-center gap-1 px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors">
                 Programme
-                <ChevronDown size={14} className="text-slate-400" />
+                <ChevronDown size={14} className="text-slate-950" />
               </button>
 
               {activeDropdown === "programs" && (
@@ -187,7 +179,7 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
                       className="block p-2 rounded-xl hover:bg-slate-50 text-slate-800"
                     >
                       <div className="font-bold text-xs uppercase">Privatstunden & 10er-Karten</div>
-                      <div className="text-[11px] text-slate-500">1-zu-1 Intensivtraining mit Amir</div>
+                      <div className="text-[11px] text-slate-500">1-zu-1 Intensivtraining mit Amir & Team</div>
                     </a>
                   </div>
                 </div>
@@ -196,39 +188,47 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
 
             <a
               href="#camps"
-              className="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-slate-950 rounded-lg hover:bg-slate-100 transition-colors"
+              className="px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors"
             >
               Feriencamps
             </a>
 
             <a
               href="#pricing"
-              className="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-slate-950 rounded-lg hover:bg-slate-100 transition-colors"
+              className="px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors"
             >
               Preise & Saison
             </a>
 
             <a
               href="#yonex"
-              className="px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 hover:text-slate-950 rounded-lg hover:bg-slate-100 transition-colors"
+              className="px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors"
             >
               Yonex Testcenter
             </a>
+
+            <button
+              onClick={() => onOpenVoucher?.()}
+              className="px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors flex items-center gap-1.5"
+            >
+              <Gift size={13} className="text-slate-950" />
+              <span>Gutschein</span>
+            </button>
           </nav>
 
           <div className="hidden sm:flex items-center gap-3">
             <a
               href={`tel:${TENNIS_DATA.general.phone.replace(/[^0-9+]/g, "")}`}
-              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-bold text-slate-700 hover:text-slate-950 transition"
+              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-black text-slate-950 hover:bg-slate-950/10 rounded-xl transition"
               title="Direkt anrufen"
             >
-              <Phone size={14} className="text-lime-600" />
+              <Phone size={14} className="text-slate-950" />
               <span>{TENNIS_DATA.general.phone}</span>
             </a>
 
             <button
               onClick={() => onOpenBooking()}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-lime-400 text-slate-950 text-xs font-black tracking-wide hover:bg-lime-300 transition-all shadow-sm hover:shadow active:scale-95"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-950 text-lime-400 text-xs font-black tracking-wide hover:bg-slate-900 hover:text-lime-300 transition-all shadow-md hover:shadow-xl active:scale-95"
             >
               <Calendar size={14} />
               <span>Schnupperstunde buchen</span>
@@ -237,7 +237,7 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl text-slate-800 hover:bg-slate-100 transition"
+            className="lg:hidden p-2 rounded-xl text-slate-950 hover:bg-slate-950/10 transition"
             aria-label="Menü öffnen"
           >
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -261,7 +261,7 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block py-2.5 text-base font-bold text-slate-900 border-b border-slate-100"
               >
-                Standorte (SG Weiterstadt & Pfungstadt)
+                Standort (SG Weiterstadt Tennis)
               </a>
               <a
                 href="#programs"
@@ -291,6 +291,16 @@ export default function Navbar({ onOpenBooking, onOpenLegal }: NavbarProps) {
               >
                 Yonex Testcenter & Bespannung
               </a>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenVoucher?.();
+                }}
+                className="w-full text-left py-2.5 text-base font-bold text-slate-900 border-b border-slate-100 flex items-center justify-between"
+              >
+                <span>Gutschein verschenken</span>
+                <Gift size={18} className="text-lime-600" />
+              </button>
             </div>
 
             <div className="pt-4 space-y-3">
