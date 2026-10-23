@@ -115,12 +115,12 @@ export default function LocationsSection({ onOpenBooking }: LocationsSectionProp
           </span>
           <span className="hidden sm:inline">·</span>
           <span>
-            Fragen zu Weiterstadt?{" "}
+            Fragen zum Training?{" "}
             <a
-              href="mailto:tennis@sg-weiterstadt.de"
+              href="mailto:info@ts-amir.de"
               className="text-slate-900 font-bold hover:underline"
             >
-              tennis@sg-weiterstadt.de
+              info@ts-amir.de
             </a>
           </span>
         </div>

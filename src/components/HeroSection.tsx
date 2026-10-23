@@ -53,7 +53,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                   onClick={() => onOpenBooking(item.id)}
                   className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-slate-300 bg-white/90 text-xs font-bold text-slate-800 hover:border-lime-500 hover:bg-lime-50/70 hover:text-slate-950 transition-all shadow-sm active:scale-95"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-lime-500"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C85A32]"></span>
                   {item.label}
                 </button>
               ))}

@@ -166,7 +166,7 @@ export default function CampsSection({ onOpenBooking }: CampsSectionProps) {
               ✓ Täglich Tennis &amp; Athletik
             </span>
             <span className="px-3 py-1 rounded-full bg-slate-950 text-white">
-              ✓ Warmes Mittagessen (Jugend)
+              ✓ Verpflegung für Jugend
             </span>
             <span className="px-3 py-1 rounded-full bg-slate-950 text-white">
               ✓ Schlechtwetter-Hallengarantie
@@ -368,7 +368,7 @@ export default function CampsSection({ onOpenBooking }: CampsSectionProps) {
             <div className="flex items-center gap-2">
               <MapPin size={15} className="text-lime-400 flex-shrink-0" />
               <span>
-                Anlage &amp; Tennishalle der Sportgemeinde 1886 e.V. Weiterstadt (Am Aulenberg 2-10 / Am Sportpark 1)
+                Anlage &amp; Tennishalle der Sportgemeinde 1886 e.V. Weiterstadt (Am Aulberg 2, 64331 Weiterstadt)
               </span>
             </div>
 

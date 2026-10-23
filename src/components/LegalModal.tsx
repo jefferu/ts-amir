@@ -71,7 +71,7 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
               <div>
                 <h4 className="font-bold text-slate-900 mb-1">Trainingsstätte & Kooperationspartner</h4>
                 <p>
-                  • SG Weiterstadt Tennis (Am Sportpark 1, 64331 Weiterstadt)
+                  • SG Weiterstadt Tennis (Am Aulberg 2, 64331 Weiterstadt)
                 </p>
               </div>
 

@@ -11,6 +11,7 @@ import CampsSection from "@/components/CampsSection";
 import PricingSection from "@/components/PricingSection";
 import TrainingPhilosophySection from "@/components/TrainingPhilosophySection";
 import EquipmentSection from "@/components/EquipmentSection";
+import GallerySection from "@/components/GallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -64,6 +65,7 @@ export default function Home() {
         <PricingSection onOpenBooking={handleOpenBooking} onOpenVoucher={handleOpenVoucher} />
         <TrainingPhilosophySection />
         <EquipmentSection onOpenBooking={handleOpenBooking} />
+        <GallerySection />
         <TestimonialsSection />
         <CTASection onOpenBooking={handleOpenBooking} />
       </main>

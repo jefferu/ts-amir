@@ -156,7 +156,7 @@ export const TENNIS_DATA = {
       name: "SG Weiterstadt Tennis",
       badge: "Hauptstandort & Leistungszentrum",
       badgeColor: "bg-lime-400 text-slate-900",
-      address: "Am Sportpark 1",
+      address: "Am Aulberg 2",
       city: "64331 Weiterstadt",
       courts: "12 Sandplätze (Außenanlage)",
       indoor: "Moderne Tennishalle (Ganzjahresbetrieb)",
@@ -258,7 +258,7 @@ export const TENNIS_DATA = {
       description:
         "Unsere legendären Feriencamps mit über 100 Teilnehmern pro Saison! Mehrere Tage intensives Training, Matchpraxis, Abschlussturnier mit Pokalen und gemeinsame Mittagspausen.",
       features: [
-        "3 bis 5 Tage Vollzeit-Tennispower",
+        "4 bis 5 Tage Vollzeit-Tennispower",
         "Inklusive warmem Mittagessen & Snacks",
         "Abschlussturnier mit Medaillen & Preisen",
         "Perfekt für enorme Sprünge in kurzer Zeit",

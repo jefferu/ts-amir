@@ -167,7 +167,7 @@ export default function Footer({ onOpenLegal, onOpenBooking, onOpenVoucher }: Fo
                   SG Weiterstadt Tennis
                 </a>
                 <p className="text-[11px] text-slate-400">
-                  Am Sportpark 1, 64331 Weiterstadt
+                  Am Aulberg 2, 64331 Weiterstadt
                 </p>
                 <p className="text-[10px] text-lime-400 font-semibold mt-0.5">
                   Halle & Außenplätze

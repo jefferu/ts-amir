@@ -14,6 +14,7 @@ import {
   Shield,
   Layers,
   Gift,
+  Camera,
 } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
 import { getAssetUrl } from "@/utils/assets";
@@ -95,6 +96,16 @@ export default function Navbar({ onOpenBooking, onOpenLegal, onOpenVoucher }: Na
                       <div>
                         <div className="font-bold text-xs uppercase tracking-wide">Philosophie & Methodik</div>
                         <div className="text-[11px] text-slate-500">Spaß, Technik & Spitzenleistung</div>
+                      </div>
+                    </a>
+                    <a
+                      href="#gallery"
+                      className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition text-slate-800"
+                    >
+                      <Camera size={16} className="text-lime-600 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <div className="font-bold text-xs uppercase tracking-wide">Galerie & Einblicke</div>
+                        <div className="text-[11px] text-slate-500">Fotos aus Training & Feriencamps</div>
                       </div>
                     </a>
                     <a
@@ -290,6 +301,13 @@ export default function Navbar({ onOpenBooking, onOpenLegal, onOpenVoucher }: Na
                 className="block py-2.5 text-base font-bold text-slate-900 border-b border-slate-100"
               >
                 Yonex Testcenter & Bespannung
+              </a>
+              <a
+                href="#gallery"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2.5 text-base font-bold text-slate-900 border-b border-slate-100"
+              >
+                Galerie & Einblicke
               </a>
               <button
                 onClick={() => {
