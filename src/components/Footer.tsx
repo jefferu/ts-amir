@@ -29,15 +29,15 @@ export default function Footer({ onOpenLegal, onOpenBooking, onOpenVoucher }: Fo
                   TENNISSCHULE <span className="text-lime-400">AMIR</span>
                 </span>
                 <span className="text-[10px] text-slate-400 tracking-wider uppercase font-semibold">
-                  Akademie Darmstadt & Weiterstadt
+                  Akademie Weiterstadt
                 </span>
               </div>
             </div>
 
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm mb-6">
-              Ihre moderne Tennisschule und Akademie in Darmstadt und
-              Weiterstadt. Geleitet von Davis-Cup-Spieler Amir Reza mit einem
-              10-köpfigen Trainerteam für alle Alters- und Spielklassen. Powered by Yonex.
+              Ihre moderne Tennisschule und Akademie in Weiterstadt. Geleitet
+              von Davis-Cup-Spieler Amir Reza mit einem 10-köpfigen Trainerteam
+              für alle Alters- und Spielklassen. Powered by Yonex.
             </p>
 
             <div className="flex flex-wrap items-center gap-2 text-[10px] font-bold text-slate-300">

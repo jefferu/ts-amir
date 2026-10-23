@@ -48,36 +48,36 @@ export default function Navbar({ onOpenBooking, onOpenLegal, onOpenVoucher }: Na
         }`}
       >
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group select-none py-0.5">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group select-none py-0.5 shrink-0">
             <img
               src={getAssetUrl("/images/logo-amir.png")}
               alt="Tennisschule Amir"
-              className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-sm"
+              className="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-sm shrink-0"
             />
-            <div className="flex flex-col">
+            <div className="flex flex-col whitespace-nowrap">
               <span className="text-base sm:text-lg font-black tracking-tight text-slate-950 leading-tight">
                 TENNISSCHULE <span className="text-slate-950">AMIR</span>
               </span>
               <span className="text-[9px] font-black tracking-widest text-slate-950/80 uppercase">
-                Akademie Darmstadt & Weiterstadt
+                Akademie Weiterstadt
               </span>
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 whitespace-nowrap">
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("about")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors">
-                Über uns
-                <ChevronDown size={14} className="text-slate-950" />
+              <button className="flex items-center gap-1 px-2.5 xl:px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors whitespace-nowrap">
+                <span>Über uns</span>
+                <ChevronDown size={14} className="text-slate-950 shrink-0" />
               </button>
 
               {activeDropdown === "about" && (
                 <div className="absolute top-full left-0 pt-2 w-64 animate-fade-in">
-                  <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-2 text-sm">
+                  <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-2 text-sm whitespace-normal">
                     <a
                       href="#coach"
                       className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition text-slate-800"
@@ -123,47 +123,26 @@ export default function Navbar({ onOpenBooking, onOpenLegal, onOpenVoucher }: Na
               )}
             </div>
 
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("locations")}
-              onMouseLeave={() => setActiveDropdown(null)}
+            <a
+              href="#locations"
+              className="px-2.5 xl:px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors whitespace-nowrap"
             >
-              <button className="flex items-center gap-1 px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors">
-                Standort
-                <ChevronDown size={14} className="text-slate-950" />
-              </button>
-
-              {activeDropdown === "locations" && (
-                <div className="absolute top-full left-0 pt-2 w-72 animate-fade-in">
-                  <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-2 text-sm">
-                    <a
-                      href="#locations"
-                      className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-slate-50 transition text-slate-800"
-                    >
-                      <MapPin size={16} className="text-lime-600 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <div className="font-bold text-xs uppercase tracking-wide">SG Weiterstadt Tennis</div>
-                        <div className="text-[11px] text-slate-500">Hauptstandort · Halle & Außenplätze</div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              )}
-            </div>
+              Standort
+            </a>
 
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown("programs")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors">
-                Programme
-                <ChevronDown size={14} className="text-slate-950" />
+              <button className="flex items-center gap-1 px-2.5 xl:px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors whitespace-nowrap">
+                <span>Training</span>
+                <ChevronDown size={14} className="text-slate-950 shrink-0" />
               </button>
 
               {activeDropdown === "programs" && (
                 <div className="absolute top-full left-0 pt-2 w-72 animate-fade-in">
-                  <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-2 text-sm">
+                  <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-2 text-sm whitespace-normal">
                     <a
                       href="#programs"
                       className="block p-2 rounded-xl hover:bg-slate-50 text-slate-800"
@@ -199,50 +178,51 @@ export default function Navbar({ onOpenBooking, onOpenLegal, onOpenVoucher }: Na
 
             <a
               href="#camps"
-              className="px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors"
+              className="px-2.5 xl:px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors whitespace-nowrap"
             >
-              Feriencamps
+              Camps
             </a>
 
             <a
               href="#pricing"
-              className="px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors"
+              className="px-2.5 xl:px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors whitespace-nowrap"
             >
-              Preise & Saison
+              Preise
             </a>
 
             <a
               href="#yonex"
-              className="px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors"
+              className="px-2.5 xl:px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors whitespace-nowrap"
             >
-              Yonex Testcenter
+              Yonex
             </a>
 
             <button
               onClick={() => onOpenVoucher?.()}
-              className="px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors flex items-center gap-1.5"
+              className="px-2.5 xl:px-3 py-2 text-xs font-black uppercase tracking-wider text-slate-950 hover:bg-slate-950/10 rounded-xl transition-colors flex items-center gap-1.5 whitespace-nowrap"
             >
-              <Gift size={13} className="text-slate-950" />
+              <Gift size={13} className="text-slate-950 shrink-0" />
               <span>Gutschein</span>
             </button>
           </nav>
 
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-2 xl:gap-2.5 shrink-0 whitespace-nowrap">
             <a
               href={`tel:${TENNIS_DATA.general.phone.replace(/[^0-9+]/g, "")}`}
-              className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-black text-slate-950 hover:bg-slate-950/10 rounded-xl transition"
-              title="Direkt anrufen"
+              className="inline-flex items-center justify-center gap-1.5 p-2.5 xl:px-3 xl:py-2 text-xs font-black text-slate-950 bg-slate-950/5 hover:bg-slate-950/15 rounded-full transition whitespace-nowrap"
+              title={`Direkt anrufen: ${TENNIS_DATA.general.phone}`}
+              aria-label={`Direkt anrufen: ${TENNIS_DATA.general.phone}`}
             >
-              <Phone size={14} className="text-slate-950" />
-              <span>{TENNIS_DATA.general.phone}</span>
+              <Phone size={14} className="text-slate-950 shrink-0" />
+              <span className="hidden 2xl:inline">{TENNIS_DATA.general.phone}</span>
             </a>
 
             <button
               onClick={() => onOpenBooking()}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-950 text-lime-400 text-xs font-black tracking-wide hover:bg-slate-900 hover:text-lime-300 transition-all shadow-md hover:shadow-xl active:scale-95"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-950 text-lime-400 text-xs font-black tracking-wide hover:bg-slate-900 hover:text-lime-300 transition-all shadow-md hover:shadow-xl active:scale-95 whitespace-nowrap"
             >
-              <Calendar size={14} />
-              <span>Schnupperstunde buchen</span>
+              <Calendar size={14} className="shrink-0" />
+              <span>Probetraining buchen</span>
             </button>
           </div>
 
