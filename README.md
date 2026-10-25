@@ -1,6 +1,6 @@
 # Tennisschule Amir
 
-Offizielle Webseite & Demo für die Tennisschule Amir Reza (Darmstadt & Weiterstadt).
+Offizielle Webseite & Demo für die Tennisschule Amir Reza (Weiterstadt).
 
 ## Übersicht
 - Cheftrainer: Amir Reza (ATP A-Level Coach & ehem. Davis Cup Spieler)
