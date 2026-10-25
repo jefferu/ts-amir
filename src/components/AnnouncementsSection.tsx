@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, BellRing, Sparkles, Calendar, Check } from "lucide-react";
+import { ArrowRight, BellRing, Calendar } from "lucide-react";
 import { TENNIS_DATA } from "@/data/tennisData";
 import { getAssetUrl } from "@/utils/assets";
 
@@ -9,20 +9,26 @@ interface AnnouncementsSectionProps {
   onOpenBooking: (program?: string) => void;
 }
 
+/**
+ * Renders the announcements and events highlight grid.
+ *
+ * @param props - Component properties containing the booking callback.
+ * @returns The rendered announcements section element.
+ */
 export default function AnnouncementsSection({
   onOpenBooking,
 }: AnnouncementsSectionProps) {
   return (
-    <section className="bg-slate-100/80 py-16 md:py-20 border-y border-slate-200">
+    <section id="announcements" className="bg-slate-100/80 py-16 md:py-20 border-y border-slate-200">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-black tracking-widest text-slate-700 uppercase mb-2">
               <BellRing size={14} className="text-lime-600" />
-              <span>Aktuelles & Highlights</span>
+              <span>Aktuelles &amp; Highlights</span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight">
-              Ankündigungen & Events
+              Ankündigungen &amp; Events
             </h2>
           </div>
           <p className="text-xs sm:text-sm text-slate-500 max-w-md sm:text-right">
