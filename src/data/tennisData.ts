@@ -249,25 +249,6 @@ export const TENNIS_DATA = {
       priceWinter: "550 € (10er-Karte)",
       priceSummer: "550 € (10er-Karte)",
     },
-    {
-      id: "camps",
-      category: "camps",
-      title: "Intensiv-Feriencamps (Ostern, Sommer, Herbst & Winter)",
-      age: "6 – 16 Jahre & Erwachsene",
-      level: "Alle Spielstärken",
-      description:
-        "Unsere legendären Feriencamps mit über 100 Teilnehmern pro Saison! Mehrere Tage intensives Training, Matchpraxis, Abschlussturnier mit Pokalen und gemeinsame Mittagspausen.",
-      features: [
-        "4 bis 5 Tage Vollzeit-Tennispower",
-        "Inklusive warmem Mittagessen & Snacks",
-        "Abschlussturnier mit Medaillen & Preisen",
-        "Perfekt für enorme Sprünge in kurzer Zeit",
-      ],
-      groupSize: "Kleingruppen nach Alter & Spielstärke",
-      badge: "Jetzt anmelden",
-      priceWinter: "Ab 180 €",
-      priceSummer: "Ab 190 €",
-    },
   ],
   pricingTable: {
     winter: [

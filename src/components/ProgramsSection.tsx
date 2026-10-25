@@ -83,6 +83,14 @@ const DEFAULT_THEME: ProgramTheme = {
   dividerColor: "border-slate-100",
 };
 
+/**
+ * Renders the filterable training programs section with category-specific themes.
+ *
+ * Normalizes price strings to prevent redundant "Ab Ab" prefixes when displaying starting rates.
+ *
+ * @param props - Component properties containing the booking modal callback.
+ * @returns The rendered programs section element.
+ */
 export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps) {
   const [activeTab, setActiveTab] = useState<string>("all");
 
@@ -92,7 +100,6 @@ export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps)
     { id: "juniors", label: "Jugend (9 – 17 J.)" },
     { id: "adults", label: "Erwachsene" },
     { id: "private", label: "Privattraining" },
-    { id: "camps", label: "Feriencamps" },
   ];
 
   const filteredPrograms =
@@ -185,7 +192,7 @@ export default function ProgramsSection({ onOpenBooking }: ProgramsSectionProps)
                     </span>
                     {p.priceWinter && (
                       <span className="font-extrabold text-slate-900">
-                        Ab {p.priceSummer || p.priceWinter}
+                        Ab {(p.priceSummer || p.priceWinter).replace(/^ab\s+/i, "")}
                       </span>
                     )}
                   </div>

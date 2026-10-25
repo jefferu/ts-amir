@@ -51,19 +51,19 @@ const SEASONS: SeasonConfig[] = [
     kindergarten: {
       price: "80 €",
       time: "10:30 – 11:30 Uhr",
-      dates: "28.06.–02.07. · 05.07.–09.07. · 26.07.–30.07. · 02.08.–06.08.",
+      dates: "W1: 28.06.–02.07. · W2: 05.07.–09.07. · W3: 26.07.–30.07. · W4: 02.08.–06.08.",
       note: "Täglich 1h spielerische Ballschule & Motorik",
     },
     jugend: {
       price: "249 €",
       time: "09:00 – 14:00 Uhr",
-      dates: "Woche 1 bis 4 (jeweils Mo–Fr)",
+      dates: "W1: 28.06.–02.07. · W2: 05.07.–09.07. · W3: 26.07.–30.07. · W4: 02.08.–06.08.",
       note: "Täglich 4h Tennis, Athletik & warmes Mittagessen",
     },
     erwachsene: {
       price: "180 €",
       time: "18:00 – 20:00 Uhr",
-      dates: "W1: 28.06.–01.07. · W3: 26.07.–29.07. · W4: 02.08.–05.08.",
+      dates: "W1: 28.06.–01.07. · W2: 05.07.–08.07. · W3: 26.07.–29.07. · W4: 02.08.–05.08.",
       note: "Feierabendkurs Mo–Do (2h pro Tag)",
     },
   },
@@ -119,7 +119,7 @@ const SEASONS: SeasonConfig[] = [
     id: "winter",
     tabLabel: "❄️ Weihnachtscamp",
     seasonTitle: "Winterferien Hessen 2027 (Weihnachtscamp)",
-    datesHeadline: "Weihnachtscamp: 04.01. – 08.01.2027 · Beheizte Halle Weiterstadt",
+    datesHeadline: "Weihnachtscamp: 04.01. – 08.01.2027 · SG Weiterstadt",
     kindergarten: {
       price: "80 €",
       time: "10:30 – 11:30 Uhr",
@@ -141,6 +141,15 @@ const SEASONS: SeasonConfig[] = [
   },
 ];
 
+/**
+ * Renders the interactive holiday camps section across all four Hessian school holiday periods.
+ *
+ * Ensures all camp weeks (including all 4 summer camp weeks) are displayed without truncation
+ * on mobile viewports so users can inspect every available date directly.
+ *
+ * @param props - Component properties containing the booking modal trigger.
+ * @returns The rendered camps section element.
+ */
 export default function CampsSection({ onOpenBooking }: CampsSectionProps) {
   const [activeSeason, setActiveSeason] = useState<CampSeasonKey>("sommer");
   const [flyerModal, setFlyerModal] = useState<"camp" | "kindergarten" | null>(null);
@@ -259,7 +268,7 @@ export default function CampsSection({ onOpenBooking }: CampsSectionProps) {
                     <Clock size={14} className="text-amber-400 flex-shrink-0" />
                     <span>{current.kindergarten.time}</span>
                   </div>
-                  <div className="text-[11px] text-slate-400 truncate">
+                  <div className="text-[11px] text-slate-300 leading-relaxed">
                     Termin: {current.kindergarten.dates}
                   </div>
                 </div>
@@ -306,7 +315,7 @@ export default function CampsSection({ onOpenBooking }: CampsSectionProps) {
                     <Clock size={14} className="text-lime-400 flex-shrink-0" />
                     <span>{current.jugend.time} (inkl. Mittagessen)</span>
                   </div>
-                  <div className="text-[11px] text-slate-400 truncate">
+                  <div className="text-[11px] text-slate-300 leading-relaxed">
                     Termin: {current.jugend.dates}
                   </div>
                 </div>
@@ -349,7 +358,7 @@ export default function CampsSection({ onOpenBooking }: CampsSectionProps) {
                     <Clock size={14} className="text-blue-400 flex-shrink-0" />
                     <span>{current.erwachsene.time} (Feierabend)</span>
                   </div>
-                  <div className="text-[11px] text-slate-400 truncate">
+                  <div className="text-[11px] text-slate-300 leading-relaxed">
                     Termin: {current.erwachsene.dates}
                   </div>
                 </div>
