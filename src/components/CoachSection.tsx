@@ -16,7 +16,7 @@ import { TENNIS_DATA } from "@/data/tennisData";
 import { getAssetUrl } from "@/utils/assets";
 
 interface CoachSectionProps {
-  onOpenBooking: () => void;
+  onOpenBooking: (program?: string) => void;
 }
 
 export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
@@ -92,7 +92,7 @@ export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <button
-                onClick={onOpenBooking}
+                onClick={() => onOpenBooking()}
                 className="px-6 py-3.5 rounded-full bg-slate-900 text-white font-bold text-xs tracking-wide hover:bg-slate-800 transition shadow-md flex items-center justify-center gap-2"
               >
                 <span>Training beim Trainerteam anfragen</span>

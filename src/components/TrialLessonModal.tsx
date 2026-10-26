@@ -23,13 +23,8 @@ interface TrialLessonModalProps {
 /**
  * Maps incoming program identifiers or titles to user-friendly titles, categories, and preselected age groups.
  */
-function resolveProgramContext(programRaw?: string) {
-  if (
-    !programRaw ||
-    programRaw === "schnuppern" ||
-    programRaw === "free-trial" ||
-    programRaw.toLowerCase().includes("trial")
-  ) {
+function resolveProgramContext(programRaw?: unknown) {
+  if (typeof programRaw !== "string" || !programRaw || programRaw === "schnuppern" || programRaw === "free-trial") {
     return {
       isTrial: true,
       displayTitle: "Kostenlose Schnupperstunde buchen",
@@ -43,6 +38,19 @@ function resolveProgramContext(programRaw?: string) {
   }
 
   const pLower = programRaw.toLowerCase();
+
+  if (pLower.includes("trial")) {
+    return {
+      isTrial: true,
+      displayTitle: "Kostenlose Schnupperstunde buchen",
+      subheading: "Unverbindlich & Kostenfrei",
+      infoText:
+        "Schnupperstunden sind für Neukunden kostenlos. Leihschläger von Yonex und Bälle stellen wir dir vor Ort bereit!",
+      buttonText: "Kostenlose Schnupperstunde absenden",
+      badgeText: "Kostenlose Schnupperstunde",
+      defaultAgeGroup: "jugend" as "kids" | "jugend" | "erwachsene",
+    };
+  }
 
   let displayTitle = programRaw;
   let defaultAgeGroup: "kids" | "jugend" | "erwachsene" = "jugend";
@@ -98,7 +106,7 @@ export default function TrialLessonModal({
     ageGroup: context.defaultAgeGroup,
     skillLevel: "anfaenger",
     location: "weiterstadt",
-    program: initialProgram || "schnuppern",
+    program: typeof initialProgram === "string" ? initialProgram : "schnuppern",
     notes: "",
   });
 
@@ -108,7 +116,7 @@ export default function TrialLessonModal({
       const updated = resolveProgramContext(initialProgram);
       setFormData((prev) => ({
         ...prev,
-        program: initialProgram || "schnuppern",
+        program: typeof initialProgram === "string" ? initialProgram : "schnuppern",
         ageGroup: updated.defaultAgeGroup,
       }));
       setSubmitted(false);

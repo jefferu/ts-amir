@@ -4,7 +4,7 @@ import React from "react";
 import { Wrench, Shield, CheckCircle, Sparkles, ArrowRight } from "lucide-react";
 
 interface EquipmentSectionProps {
-  onOpenBooking: () => void;
+  onOpenBooking: (program?: string) => void;
 }
 
 export default function EquipmentSection({ onOpenBooking }: EquipmentSectionProps) {
@@ -57,7 +57,7 @@ export default function EquipmentSection({ onOpenBooking }: EquipmentSectionProp
             </div>
 
             <button
-              onClick={onOpenBooking}
+              onClick={() => onOpenBooking("Yonex Testcenter & Bespannungsservice")}
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-lime-400 text-slate-950 font-black text-xs uppercase tracking-wide hover:bg-lime-300 transition shadow-lg"
             >
               <span>Testschläger oder Bespannung anfragen</span>
