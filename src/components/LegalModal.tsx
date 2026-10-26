@@ -110,6 +110,21 @@ export default function LegalModal({ isOpen, onClose, type }: LegalModalProps) {
                   Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
                 </p>
               </div>
+
+              <div>
+                <h4 className="font-bold text-slate-900 mb-1">Konzeption, Webdesign &amp; Technische Umsetzung</h4>
+                <p>
+                  <a
+                    href="https://www.linkedin.com/in/mehrshad-riazi/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-slate-800 hover:text-lime-600 underline underline-offset-2 transition"
+                  >
+                    Mehrshad Riazi
+                  </a>{" "}
+                  (LinkedIn-Profil)
+                </p>
+              </div>
             </>
           ) : (
             <>

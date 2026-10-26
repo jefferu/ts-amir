@@ -274,10 +274,22 @@ export default function Footer({ onOpenLegal, onOpenBooking, onOpenVoucher }: Fo
         </div>
 
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-center sm:text-left">
             <p>
               © 2026 Tennisschule Amir Reza. Alle Rechte
               vorbehalten.
+            </p>
+            <span className="hidden sm:inline text-slate-600">·</span>
+            <p>
+              Webdesign &amp; Entwicklung:{" "}
+              <a
+                href="https://www.linkedin.com/in/mehrshad-riazi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-300 hover:text-lime-400 transition underline-offset-4 hover:underline font-medium"
+              >
+                Mehrshad Riazi
+              </a>
             </p>
           </div>
 
