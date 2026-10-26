@@ -247,9 +247,6 @@ export default function Footer({ onOpenLegal, onOpenBooking, onOpenVoucher }: Fo
                     <span className="block text-xs font-bold text-white group-hover:text-lime-400 transition-colors truncate">
                       {partner.name}
                     </span>
-                    <span className="block text-[10px] text-slate-400 leading-tight mt-0.5 font-medium line-clamp-1">
-                      {partner.role}
-                    </span>
                   </div>
                 </div>
               );

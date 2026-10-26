@@ -76,13 +76,23 @@ export default function AnnouncementsSection({
                     {item.date}
                   </span>
 
-                  <button
-                    onClick={() => onOpenBooking(item.id)}
-                    className="inline-flex items-center gap-1 text-xs font-black text-slate-950 hover:text-lime-600 transition-colors"
-                  >
-                    <span>{item.ctaText}</span>
-                    <ArrowRight size={13} />
-                  </button>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="inline-flex items-center gap-1 text-xs font-black text-slate-950 hover:text-lime-600 transition-colors"
+                    >
+                      <span>{item.ctaText}</span>
+                      <ArrowRight size={13} />
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => onOpenBooking(item.id)}
+                      className="inline-flex items-center gap-1 text-xs font-black text-slate-950 hover:text-lime-600 transition-colors"
+                    >
+                      <span>{item.ctaText}</span>
+                      <ArrowRight size={13} />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

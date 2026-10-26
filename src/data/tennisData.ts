@@ -37,6 +37,7 @@ export interface Announcement {
   image: string;
   ctaText: string;
   badge: string;
+  href?: string;
 }
 
 export interface CoachCredential {
@@ -393,8 +394,9 @@ export const TENNIS_DATA = {
       description:
         "Intensiv-Tenniscamps für Kids & Jugendliche zu allen hessischen Ferienzeiten. Täglich 4 Stunden Tennis, Athletik, Vollverpflegung und großes Abschlussturnier.",
       image: "/images/announcement-camps.jpg",
-      ctaText: "Camp-Plätze prüfen",
+      ctaText: "Termine",
       badge: "Beliebt",
+      href: "#camps",
     },
     {
       id: "yonex-service",
@@ -459,8 +461,8 @@ export const TENNIS_DATA = {
       url: "https://henschel-darmstadt.de",
     },
     {
-      id: "adler",
-      name: "Adler",
+      id: "rws",
+      name: "RWS Vermögensplanung AG",
       role: "Regionaler Förderer",
       description: "Traditionspartner der Tennisschule",
       logo: "/images/partners/adler.svg",
