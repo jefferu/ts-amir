@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   X,
   CheckCircle2,
@@ -109,19 +109,6 @@ export default function TrialLessonModal({
     program: typeof initialProgram === "string" ? initialProgram : "schnuppern",
     notes: "",
   });
-
-  // Keep age group and program synced if initialProgram changes while open
-  useEffect(() => {
-    if (isOpen) {
-      const updated = resolveProgramContext(initialProgram);
-      setFormData((prev) => ({
-        ...prev,
-        program: typeof initialProgram === "string" ? initialProgram : "schnuppern",
-        ageGroup: updated.defaultAgeGroup,
-      }));
-      setSubmitted(false);
-    }
-  }, [isOpen, initialProgram]);
 
   if (!isOpen) return null;
 

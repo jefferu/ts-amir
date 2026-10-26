@@ -73,6 +73,7 @@ export default function Home() {
       <Footer onOpenLegal={handleOpenLegal} onOpenBooking={handleOpenBooking} onOpenVoucher={handleOpenVoucher} />
 
       <TrialLessonModal
+        key={`${bookingOpen}-${selectedProgram}`}
         isOpen={bookingOpen}
         onClose={handleCloseBooking}
         initialProgram={selectedProgram}

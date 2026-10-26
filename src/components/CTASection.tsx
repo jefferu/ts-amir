@@ -34,7 +34,7 @@ export default function CTASection({ onOpenBooking }: CTASectionProps) {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <button
-            onClick={onOpenBooking}
+            onClick={() => onOpenBooking()}
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-lime-400 text-slate-950 font-black text-sm tracking-wide hover:bg-lime-300 transition-all shadow-xl active:scale-95 flex items-center justify-center gap-2"
           >
             <Calendar size={18} />

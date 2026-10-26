@@ -206,7 +206,7 @@ export default function Footer({ onOpenLegal, onOpenBooking, onOpenVoucher }: Fo
               </li>
               <li className="pt-2">
                 <button
-                  onClick={onOpenBooking}
+                  onClick={() => onOpenBooking()}
                   className="w-full py-2 px-3 rounded-xl bg-lime-400 text-slate-950 font-bold text-[11px] text-center hover:bg-lime-300 transition"
                 >
                   Schnupperstunde buchen
