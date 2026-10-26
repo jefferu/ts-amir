@@ -278,7 +278,7 @@ export default function Footer({ onOpenLegal, onOpenBooking, onOpenVoucher }: Fo
             </p>
             <span className="hidden sm:inline text-slate-600">·</span>
             <p>
-              Webdesign &amp; Entwicklung:{" "}
+              Webdesign:{" "}
               <a
                 href="https://www.linkedin.com/in/mehrshad-riazi/"
                 target="_blank"
