@@ -129,6 +129,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                 </div>
               </div>
 
+              {/* Desktop Floating Badges */}
               <div className="absolute top-4 -right-2 sm:-right-4 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl bg-slate-950/95 text-white backdrop-blur-md shadow-2xl border border-slate-800 z-10 animate-fade-in">
                 <img
                   src={getAssetUrl("/images/official_atp_certified.png")}
@@ -155,6 +156,41 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                     Offizieller Partner
                   </div>
                   <div className="text-xs font-black text-slate-900 whitespace-nowrap">
+                    Rafa Nadal Academy Scout
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile Badges Row (< sm) */}
+            <div className="grid grid-cols-1 xs:grid-cols-2 gap-3 mt-4 sm:hidden">
+              <div className="flex items-center gap-3 p-3 rounded-2xl bg-slate-950 text-white shadow-lg border border-slate-800">
+                <img
+                  src={getAssetUrl("/images/official_atp_certified.png")}
+                  alt="Official ATP Certified"
+                  className="h-7 w-auto object-contain flex-shrink-0"
+                />
+                <div className="min-w-0">
+                  <div className="text-[9px] font-extrabold uppercase tracking-widest text-lime-400 leading-tight">
+                    Höchste Lizenz
+                  </div>
+                  <div className="text-[11px] font-black text-white truncate">
+                    GPTCA A-Level Coach
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 p-3 rounded-2xl bg-white text-slate-900 shadow-md border border-slate-200">
+                <img
+                  src={getAssetUrl("/images/rafa-nadal-academy-logo.png")}
+                  alt="Rafa Nadal Academy"
+                  className="w-8 h-8 rounded-lg object-cover shadow-sm border border-slate-100 flex-shrink-0"
+                />
+                <div className="min-w-0">
+                  <div className="text-[9px] font-extrabold uppercase tracking-widest text-slate-500 leading-tight">
+                    Offizieller Partner
+                  </div>
+                  <div className="text-[11px] font-black text-slate-900 truncate">
                     Rafa Nadal Academy Scout
                   </div>
                 </div>
