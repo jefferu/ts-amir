@@ -480,7 +480,7 @@ export const TENNIS_DATA = {
       name: "SG Weiterstadt Tennis",
       role: "Vereins- & Anlagenpartner",
       description: "Trainingsstützpunkt & Hallenplätze",
-      logo: "/images/partners/sg-weiterstadt.svg",
+      logo: "/images/partners/sg-weiterstadt.png",
       category: "club",
       url: "#locations",
     },
