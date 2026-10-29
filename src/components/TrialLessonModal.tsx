@@ -97,6 +97,8 @@ export default function TrialLessonModal({
   initialProgram,
 }: TrialLessonModalProps) {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const context = resolveProgramContext(initialProgram);
 
   const [formData, setFormData] = useState({
@@ -108,17 +110,72 @@ export default function TrialLessonModal({
     location: "weiterstadt",
     program: typeof initialProgram === "string" ? initialProgram : "schnuppern",
     notes: "",
+    honeypot: "",
   });
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const payload = {
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      program: context.badgeText,
+      ageGroup: formData.ageGroup,
+      skillLevel: formData.skillLevel,
+      location: formData.location,
+      notes: formData.notes,
+      website_url: formData.honeypot, // Spam honeypot
+    };
+
+    try {
+      const response = await fetch(getAssetUrl("/send-mail.php"), {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        // Fallback: If server script returns error, trigger client mailto to info@ts-amir.de
+        triggerMailtoFallback();
+        setSubmitted(true);
+      }
+    } catch {
+      // Offline or network error: fallback to client mailto
+      triggerMailtoFallback();
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const triggerMailtoFallback = () => {
+    const subject = encodeURIComponent(`Anfrage Website: ${context.badgeText} – ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Telefon: ${formData.phone}\n` +
+      `E-Mail: ${formData.email}\n` +
+      `Angebot: ${context.badgeText}\n` +
+      `Altersgruppe: ${formData.ageGroup}\n` +
+      `Spielstärke: ${formData.skillLevel}\n` +
+      `Standort: ${formData.location}\n\n` +
+      `Nachricht / Terminwunsch:\n${formData.notes || "Keine zusätzlichen Notizen"}`
+    );
+    if (typeof window !== "undefined") {
+      window.location.href = `mailto:${TENNIS_DATA.general.email}?subject=${subject}&body=${body}`;
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setIsSubmitting(false);
+    setErrorMessage(null);
     onClose();
   };
 
@@ -370,12 +427,27 @@ export default function TrialLessonModal({
                 />
               </div>
 
+              {/* Hidden Honeypot for Anti-Spam bots */}
+              <input
+                type="text"
+                name="website_url"
+                value={formData.honeypot}
+                onChange={(e) => setFormData({ ...formData, honeypot: e.target.value })}
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                aria-hidden="true"
+              />
+
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-6 rounded-2xl bg-slate-950 text-white hover:bg-slate-800 font-black text-sm tracking-wide transition shadow-lg flex items-center justify-center gap-2 group"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 px-6 rounded-2xl bg-slate-950 text-white hover:bg-slate-800 disabled:opacity-60 disabled:cursor-not-allowed font-black text-sm tracking-wide transition shadow-lg flex items-center justify-center gap-2 group"
                 >
-                  <span className="truncate">{context.buttonText}</span>
+                  <span className="truncate">
+                    {isSubmitting ? "Anfrage wird übermittelt..." : context.buttonText}
+                  </span>
                   <span className="w-6 h-6 rounded-full bg-lime-400 text-slate-950 inline-flex items-center justify-center font-bold text-xs group-hover:scale-110 transition-transform flex-shrink-0">
                     →
                   </span>
