@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const siteUrl = "https://ts-amir.de";
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export const metadata: Metadata = {
-  title: "Tennisschule Amir | Dein privater Tennistrainer & Akademie Darmstadt",
+  metadataBase: new URL(siteUrl),
+  title: "Tennisschule Amir | Spitzen-Tennistraining in Darmstadt & Weiterstadt",
   description:
-    "Professionelles Tennistraining in Darmstadt & Weiterstadt für alle Spielstärken und Altersklassen. Geleitet von Davis-Cup-Spieler und ATP A-Lizenz Coach Amir Reza. Partner der Rafa Nadal Academy.",
+    "ATP A-Level zertifiziertes Training für Kinder, Jugendliche und Erwachsene.",
   keywords: [
     "Tennisschule Amir",
     "Tennis Darmstadt",
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
     "Tennistraining Hessen",
     "ATP Coach Darmstadt",
     "Kinder Tenniscamp",
-    "Tennistraining Erwachsene"
+    "Tennistraining Erwachsene",
   ],
   icons: {
     icon: [
@@ -28,8 +30,23 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tennisschule Amir | Spitzen-Tennistraining in Darmstadt & Weiterstadt",
     description: "ATP A-Level zertifiziertes Training für Kinder, Jugendliche und Erwachsene.",
+    url: siteUrl,
+    siteName: "Tennisschule Amir",
     locale: "de_DE",
     type: "website",
+    images: [
+      {
+        url: `${basePath}/images/logo-amir.png`,
+        width: 1200,
+        height: 630,
+        alt: "Tennisschule Amir",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tennisschule Amir | Spitzen-Tennistraining in Darmstadt & Weiterstadt",
+    description: "ATP A-Level zertifiziertes Training für Kinder, Jugendliche und Erwachsene.",
     images: [`${basePath}/images/logo-amir.png`],
   },
 };

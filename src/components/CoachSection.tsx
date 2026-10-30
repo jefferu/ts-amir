@@ -27,7 +27,7 @@ export default function CoachSection({ onOpenBooking }: CoachSectionProps) {
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-100 bg-gradient-to-b from-slate-800 to-slate-950 flex items-center justify-center pt-6">
               <img
-                src={getAssetUrl("/images/amir.png")}
+                src={getAssetUrl("/images/amir-coach.png")}
                 alt="Cheftrainer Amir Reza"
                 className="w-auto h-[480px] object-contain object-bottom hover:scale-105 transition-transform duration-700"
               />

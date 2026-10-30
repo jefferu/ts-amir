@@ -46,7 +46,7 @@ export default function HeroSection({ onOpenBooking }: HeroSectionProps) {
                 { label: "Jugendförderung", id: "juniors" },
                 { label: "Erwachsenentraining", id: "adults" },
                 { label: "Privatstunden & 10er-Karte", id: "private" },
-                { label: "Feriencamps 2026", id: "camps" },
+                { label: "Feriencamps", id: "camps" },
               ].map((item) => (
                 <button
                   key={item.id}

@@ -388,7 +388,7 @@ export const TENNIS_DATA = {
     },
     {
       id: "summer-camp",
-      title: "Oster-, Sommer-, Herbst- & Winter-Camps 2026",
+      title: "Oster-, Sommer-, Herbst- & Winter-Camps",
       tag: "Ferienspaß",
       date: "Ostern, Sommer, Herbst & Winter",
       description:
